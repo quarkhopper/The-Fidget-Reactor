@@ -1,33 +1,43 @@
+// tick_engine.hpp
 #pragma once
+
 #include <iostream>
+#include <vector>
 #include "controller_core.hpp"
 #include "message_bus.hpp"
-#include "power_state_machine.hpp"
+#include "subsystems/subsystem.hpp"
 
 namespace tickEngine {
 
     class TickEngine {
     public:
         TickEngine(ControllerState& state, MessageBus& bus)
-            : state(state), bus(bus), powerSM(state, bus) {}
+            : state(state), bus(bus) {}
+
+        void register_subsystem(Subsystem* subsystem) {
+            subsystems.push_back(subsystem);
+        }
+
+        void initialize_all() {
+            for (Subsystem* s : subsystems) {
+                s->initialize();
+            }
+        }
 
         void tick() {
             std::cout << "[tickEngine] Tick executed.\n";
 
-            // Handle messages like button presses
-            powerSM.handleInput();
+            for (Subsystem* s : subsystems) {
+                s->on_tick();
+            }
 
-            // Advance state machine phases automatically
-            powerSM.tickAdvance();
-
-            // Clear messages for next tick
             bus.clear();
         }
 
     private:
         ControllerState& state;
         MessageBus& bus;
-        PowerStateMachine powerSM;
+        std::vector<Subsystem*> subsystems;
     };
 
 } // namespace tickEngine

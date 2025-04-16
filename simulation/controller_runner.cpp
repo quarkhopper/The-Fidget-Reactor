@@ -2,6 +2,10 @@
 #include <thread>
 #include <chrono>
 #include "tick_engine.hpp"
+#include "subsystems/core_system.hpp"
+#include "subsystems/ctrl_system.hpp"
+#include "subsystems/gen_system.hpp"
+#include "subsystems/xfer_system.hpp"
 
 int main() {
     std::cout << "Starting Fidget Reactor simulation...\n";
@@ -11,7 +15,18 @@ int main() {
     MessageBus bus;
     tickEngine::TickEngine engine(state, bus);
 
-    // Simulate power button press at tick 0 and 5
+    CoreSystem core(state);
+    CtrlSystem ctrl(state);
+    GenSystem gen(state);
+    XferSystem xfer(state);
+
+    engine.register_subsystem(&core);
+    engine.register_subsystem(&ctrl);
+    engine.register_subsystem(&gen);
+    engine.register_subsystem(&xfer);
+
+    engine.initialize_all();
+
     auto simulateButtonPress = [&](int tick) {
         if (tick == 0 || tick == 5) {
             bus.pushInbound({
@@ -22,7 +37,6 @@ int main() {
             });
         }
     };
-   
 
     while (tickCount < 10) {
         std::cout << "Tick " << tickCount << std::endl;
