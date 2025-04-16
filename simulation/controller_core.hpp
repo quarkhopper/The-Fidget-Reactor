@@ -47,27 +47,3 @@ struct ControllerState {
         outboundMessages.clear();
     }
 };
-
-// Basic MessageBus interface for simulating input/output in ticks
-class MessageBus {
-public:
-    void pushInbound(const Message& msg) {
-        state.inboundMessages.push_back(msg);
-    }
-
-    void emitOutbound(const Message& msg) {
-        state.outboundMessages.push_back(msg);
-    }
-
-    ControllerState& getState() {
-        return state;
-    }
-
-    void nextTick() {
-        // Stub: called each tick by tickEngine
-        state.resetMessages();
-    }
-
-private:
-    ControllerState state;
-};

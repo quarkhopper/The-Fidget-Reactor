@@ -14,9 +14,15 @@ int main() {
     // Simulate power button press at tick 0 and 5
     auto simulateButtonPress = [&](int tick) {
         if (tick == 0 || tick == 5) {
-            bus.pushInbound({ MessageType::BUTTON_PRESS, 0 });
+            bus.pushInbound({
+                .type = MessageType::BUTTON_PRESS,
+                .sourceId = 0,
+                .intValue = std::nullopt,
+                .strValue = std::nullopt
+            });
         }
     };
+   
 
     while (tickCount < 10) {
         std::cout << "Tick " << tickCount << std::endl;

@@ -1,5 +1,8 @@
 #pragma once
+#include <iostream>
 #include "controller_core.hpp"
+#include "message_bus.hpp"
+
 
 class PowerStateMachine {
 public:
@@ -7,8 +10,8 @@ public:
         : state(state), bus(bus) {}
 
     void handleInput() {
-        for (const auto& msg : state.inboundMessages) {
-            if (msg.type == MessageType::BUTTON_PRESS && msg.sourceId == POWER_BUTTON_ID) {
+        for (const auto& msg : bus.getInbound()) {
+             if (msg.type == MessageType::BUTTON_PRESS && msg.sourceId == POWER_BUTTON_ID) {
                 handlePowerButton();
             }
         }
@@ -50,7 +53,25 @@ private:
     }
 
     void transitionTo(ControllerState::Phase next) {
+        std::cout << "[PowerStateMachine] Transitioning to phase: ";
+        switch (next) {
+            case ControllerState::Phase::OFF: std::cout << "OFF"; break;
+            case ControllerState::Phase::INIT: std::cout << "INIT"; break;
+            case ControllerState::Phase::TEST: std::cout << "TEST"; break;
+            case ControllerState::Phase::STARTUP: std::cout << "STARTUP"; break;
+            case ControllerState::Phase::ON: std::cout << "ON"; break;
+            case ControllerState::Phase::SHUTDOWN: std::cout << "SHUTDOWN"; break;
+        }
+        std::cout << std::endl;
+    
         state.phase = next;
-        bus.emitOutbound({ MessageType::STATE_TRANSITION, POWER_BUTTON_ID, static_cast<int>(next) });
+        bus.emitOutbound({
+            .type = MessageType::STATE_TRANSITION,
+            .sourceId = POWER_BUTTON_ID,
+            .intValue = static_cast<int>(next),
+            .strValue = std::nullopt
+        });
     }
+   
+    
 };
