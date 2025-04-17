@@ -1,4 +1,3 @@
-// controller_manager.hpp
 #pragma once
 
 #include "controller_core.hpp"
@@ -23,57 +22,16 @@ public:
         ON
     };
 
-    ControllerManager()
-        : engine(state, bus),
-          core(state),
-          ctrl(state),
-          gen(state),
-          xfer(state),
-          init(state, bus),
-          startup(state, bus),
-          test(state, bus),
-          shutdown(state, bus) {
+    ControllerManager();  // Constructor to initialize components and subsystems
 
-        engine.register_subsystem(&core);
-        engine.register_subsystem(&ctrl);
-        engine.register_subsystem(&gen);
-        engine.register_subsystem(&xfer);
-    }
+    void start();  // Start system method
+    void tick(int tickCount);  // Method for handling tick logic
+    void onPinChange(const std::string& pin, bool state);  // Method for handling pin change
 
-    void start() {
-        std::cout << "[ControllerManager] Starting system...\n";
-        engine.initialize_all();
-
-        // Example: wire up a complete/fault callback for init
-        init.set_on_complete([this]() {
-            std::cout << "[ControllerManager] Init complete.\n";
-            // TODO: transition to startup phase
-        });
-
-        init.set_on_fault([this]() {
-            std::cout << "[ControllerManager] Init failed.\n";
-            // TODO: trigger fault behavior
-        });
-
-        init.begin();
-    }
-
-    void tick(int tickCount) {
-        simulate_button_press(tickCount);
-        engine.tick();
-    }
-
-    void onPinChange(const std::string& pin, bool state) {
-        if (pin == "MASTER" && state == true) {
-            std::cout << "[PC1] Pin MASTER went HIGH. Starting system.\n";
-            this->start();  // triggers init sequence
-        }
-    }
-
+    // Static state variable for managing controller state
     static State currentState;
 
 private:
-
     ControllerState state;
     MessageBus bus;
     tickEngine::TickEngine engine;
@@ -88,14 +46,6 @@ private:
     TestManager test;
     ShutdownManager shutdown;
 
-    void simulate_button_press(int tick) {
-        if (tick == 0 || tick == 5) {
-            bus.pushInbound({
-                .type = MessageType::BUTTON_PRESS,
-                .sourceId = 0,
-                .intValue = std::nullopt,
-                .strValue = std::nullopt
-            });
-        }
-    }
+    // Simulate button press method for testing purposes
+    void simulate_button_press(int tick);
 };

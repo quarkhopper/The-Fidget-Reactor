@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++17 -Wall -Wextra \
   -IC:/msys64/mingw64/include/SDL2 \
   -LC:/msys64/mingw64/lib
 
-SRC = main_window.cpp power_button.cpp pin_sim.cpp debug_console.cpp controller_manager.cpp process_managers/init_manager.cpp config/simulator_config.cpp
+SRC = main_window.cpp power_button.cpp pin_sim.cpp debug_console.cpp controller_manager.cpp process_managers/init_manager.cpp config/simulator_config.cpp peripheral_controller.cpp
 
 TARGET = reactor_ui
 LIBS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf
@@ -14,6 +14,6 @@ $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
 
 clean:
-	-if exist reactor_ui.exe del /f /q reactor_ui.exe
+	rm -f reactor_ui.exe
 
 .PHONY: all clean
