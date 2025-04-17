@@ -55,6 +55,13 @@ public:
         engine.tick();
     }
 
+    void onPinChange(const std::string& pin, bool state) {
+        if (pin == "MASTER" && state == true) {
+            std::cout << "[PC1] Pin MASTER went HIGH. Starting system.\n";
+            this->start();  // triggers init sequence
+        }
+    }
+
 private:
     ControllerState state;
     MessageBus bus;
