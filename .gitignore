@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# stop the nul dev poops
+simulation/nul

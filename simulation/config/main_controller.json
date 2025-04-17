@@ -1,0 +1,14 @@
+{
+    "chip": {
+      "type": "esp32",
+      "cores": 2,
+      "frequency_mhz": 240,
+      "flash_kb": 8192,
+      "ram_kb": 520,
+      "pins": ["GPIO10", "GPIO11", "GPIO12"]
+    },
+    "role": "main",
+    "startup_delay_ms": 100,
+    "listen_for": ["MASTER", "SCRAM"]
+  }
+  

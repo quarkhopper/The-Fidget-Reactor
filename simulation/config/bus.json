@@ -1,0 +1,12 @@
+{
+    "routes": [
+      {
+        "signal": "MASTER_HIGH",
+        "from": "phc_a",
+        "to": ["main_controller"],
+        "event": "begin_startup"
+      }
+    ],
+    "default_encoding": "protobuf"
+  }
+  

@@ -1,0 +1,11 @@
+{
+    "phc_a": {
+      "PB0": "MASTER",
+      "PB1": "SCRAM"
+    },
+    "main_controller": {
+      "PD0": "RX",
+      "PD1": "TX"
+    }
+  }
+  

@@ -5,6 +5,7 @@
 #include "pin_sim.hpp"
 #include "debug_console.hpp"
 #include "controller_manager.hpp"
+ControllerManager controller;
 
 const int WINDOW_WIDTH = 1200;
 const int WINDOW_HEIGHT = 800;
@@ -15,7 +16,6 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    ControllerManager controller;
     DebugCoutRedirect redirect;
     DebugConsole::init("C:/Windows/Fonts/consola.ttf", 14);
     DebugConsole::setActiveMMTag("PC1");
