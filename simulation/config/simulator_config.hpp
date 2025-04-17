@@ -1,4 +1,5 @@
 // simulator_config.hpp
+
 #pragma once
 #include <string>
 #include <unordered_map>
@@ -8,9 +9,16 @@
 
 class SimulatorConfig {
 public:
-    void registerComponent(const std::string& name, ConfigurableComponent* component);
-    void loadAllConfigs(const std::string& configDir);
+    // Register a component with the given name
+    static void registerComponent(const std::string& name, ConfigurableComponent* component);
+    
+    // Load all configuration files from the given directory
+    static void loadAllConfigs(const std::string& configDir);
+    
+    // Validate the wiring file against registered components
+    static void validateWiring(const std::string& wiringFile);
 
 private:
-    std::unordered_map<std::string, ConfigurableComponent*> components;
+    // Static map to store all registered components by name
+    static std::unordered_map<std::string, ConfigurableComponent*> components;
 };

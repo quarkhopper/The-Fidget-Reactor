@@ -3,7 +3,7 @@
 #include <string>
 #include <unordered_map>
 #include <nlohmann/json.hpp>
-#include "configurable_component.hpp"
+#include "interfaces/configurable_component.hpp"
 
 class PeripheralController : public ConfigurableComponent {
 public:
@@ -11,6 +11,9 @@ public:
     void onPinWrite(const std::string& pin, bool rawState);
     void tick(int frame);
     void loadFromConfig(const nlohmann::json& obj) override;
+    
+    // Add the method for checking pin existence
+    bool hasPin(const std::string& pin) const override;
 
 private:
     struct DebounceState {

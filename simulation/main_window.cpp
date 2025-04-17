@@ -5,7 +5,12 @@
 #include "pin_sim.hpp"
 #include "debug_console.hpp"
 #include "controller_manager.hpp"
+#include "config/simulator_config.hpp"
+#include "peripheral_controller.hpp"
+
 ControllerManager controller;
+SimulatorConfig simConfig;
+
 
 const int WINDOW_WIDTH = 1200;
 const int WINDOW_HEIGHT = 800;
@@ -15,6 +20,13 @@ int main(int argc, char* argv[]) {
         std::cerr << "SDL Init Error: " << SDL_GetError() << std::endl;
         return 1;
     }
+
+    // Register components
+    PeripheralController phcA;
+    simConfig.registerComponent("phc_a", &phcA);
+
+    // Load all configs from the config/ directory
+    simConfig.loadAllConfigs("config/");
 
     DebugCoutRedirect redirect;
     DebugConsole::init("C:/Windows/Fonts/consola.ttf", 14);

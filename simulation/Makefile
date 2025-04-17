@@ -1,19 +1,19 @@
-# === CONFIG ===
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra \
   -IC:/msys64/mingw64/include/SDL2 \
   -LC:/msys64/mingw64/lib
+
+SRC = main_window.cpp power_button.cpp pin_sim.cpp debug_console.cpp controller_manager.cpp process_managers/init_manager.cpp config/simulator_config.cpp
+
 TARGET = reactor_ui
-SRC = main_window.cpp power_button.cpp pin_sim.cpp debug_console.cpp process_managers/init_manager.cpp
 LIBS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf
 
-# === BUILD RULES ===
 all: $(TARGET)
 
 $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
 
 clean:
-	del /f /q $(TARGET).exe 2>nul || exit 0
+	-if exist reactor_ui.exe del /f /q reactor_ui.exe
 
 .PHONY: all clean
