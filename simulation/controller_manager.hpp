@@ -15,6 +15,14 @@
 
 class ControllerManager {
 public:
+    // Enum to represent different states of the controller
+    enum class State {
+        OFF,
+        INIT,
+        STARTUP,
+        ON
+    };
+
     ControllerManager()
         : engine(state, bus),
           core(state),
@@ -62,7 +70,10 @@ public:
         }
     }
 
+    static State currentState;
+
 private:
+
     ControllerState state;
     MessageBus bus;
     tickEngine::TickEngine engine;
