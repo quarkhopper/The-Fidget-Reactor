@@ -203,8 +203,32 @@ FidgetReactor_SOURCE_DIR:STATIC=C:/Users/quark/OneDrive/Documents/GitHub/The-Fid
 //The directory containing a CMake configuration file for Protobuf.
 Protobuf_DIR:PATH=C:/vcpkg/installed/x64-windows/share/protobuf
 
+//Path to a file.
+Protobuf_INCLUDE_DIR:PATH=C:/vcpkg/installed/x64-windows/include
+
+//Path to a library.
+Protobuf_LIBRARY_DEBUG:FILEPATH=C:/vcpkg/installed/x64-windows/debug/lib/libprotobufd.lib
+
+//Path to a library.
+Protobuf_LIBRARY_RELEASE:FILEPATH=C:/vcpkg/installed/x64-windows/lib/libprotobuf.lib
+
+//Path to a library.
+Protobuf_LITE_LIBRARY_DEBUG:FILEPATH=C:/vcpkg/installed/x64-windows/debug/lib/libprotobuf-lited.lib
+
+//Path to a library.
+Protobuf_LITE_LIBRARY_RELEASE:FILEPATH=C:/vcpkg/installed/x64-windows/lib/libprotobuf-lite.lib
+
 //Path to a program.
 Protobuf_PROTOC_EXECUTABLE:FILEPATH=C:/vcpkg/installed/x64-windows/tools/protobuf/protoc.exe
+
+//Path to a library.
+Protobuf_PROTOC_LIBRARY_DEBUG:FILEPATH=C:/vcpkg/installed/x64-windows/debug/lib/libprotocd.lib
+
+//Path to a library.
+Protobuf_PROTOC_LIBRARY_RELEASE:FILEPATH=C:/vcpkg/installed/x64-windows/lib/libprotoc.lib
+
+//Path to a file.
+Protobuf_SRC_ROOT_FOLDER:PATH=Protobuf_SRC_ROOT_FOLDER-NOTFOUND
 
 //The directory containing a CMake configuration file for SDL2.
 SDL2_DIR:PATH=C:/vcpkg/installed/x64-windows/share/sdl2
@@ -423,6 +447,22 @@ FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[C:/vcpkg/installed/x64-windows/t
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding nlohmann_json
 FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[C:/vcpkg/installed/x64-windows/share/nlohmann_json/nlohmann_jsonConfig.cmake][v3.12.0()]
+//ADVANCED property for variable: Protobuf_INCLUDE_DIR
+Protobuf_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_LIBRARY_DEBUG
+Protobuf_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_LIBRARY_RELEASE
+Protobuf_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_LITE_LIBRARY_DEBUG
+Protobuf_LITE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_LITE_LIBRARY_RELEASE
+Protobuf_LITE_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_PROTOC_EXECUTABLE
+Protobuf_PROTOC_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_PROTOC_LIBRARY_DEBUG
+Protobuf_PROTOC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Protobuf_PROTOC_LIBRARY_RELEASE
+Protobuf_PROTOC_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //Install the dependencies listed in your manifest:
 //\n    If this is off, you will have to manually install your dependencies.
 //\n    See https://github.com/microsoft/vcpkg/tree/master/docs/specifications/manifests.md

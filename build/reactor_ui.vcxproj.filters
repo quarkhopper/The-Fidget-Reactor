@@ -28,6 +28,17 @@
     <ClCompile Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\generated\reactor.pb.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\pipe_bus_client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bus_client.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\pipe_bus_client.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\CMakeLists.txt" />
@@ -36,6 +47,9 @@
     <Natvis Include="C:\vcpkg\installed\x64-windows\share\nlohmann_json\nlohmann_json.natvis" />
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{586A1095-891D-35BD-A51F-804BE80751D7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{156CD3EA-CF3E-3DEF-AF03-AA3A2903C128}</UniqueIdentifier>
     </Filter>

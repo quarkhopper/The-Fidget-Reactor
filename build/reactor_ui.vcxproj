@@ -390,6 +390,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\simulator_config.cpp" />
     <ClCompile Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\peripheral_controller.cpp" />
     <ClCompile Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\generated\reactor.pb.cc" />
+    <ClInclude Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bus_client.hpp" />
+    <ClInclude Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\pipe_bus_client.hpp" />
+    <ClCompile Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\pipe_bus_client.cpp" />
     <Natvis Include="C:\vcpkg\installed\x64-windows\share\nlohmann_json\nlohmann_json.natvis">
     </Natvis>
   </ItemGroup>

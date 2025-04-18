@@ -1,18 +1,23 @@
-// reactor.proto
 syntax = "proto3";
 
 package reactor;
 
-// Sent from the UI to the simulation
-message UIEvent {
-  string component = 1; // e.g., "master_button"
-  string action = 2;    // e.g., "pressed", "released"
-  int32 value = 3;      // Optional numeric value (e.g., slider position)
+message Message {
+  string from = 1;
+  string to = 2;
+  oneof payload {
+    ButtonPress button_press = 3;
+    StateUpdate state_update = 4;
+    // Add more message types here
+  }
 }
 
-// Sent from the simulation to the UI
-message SimStateUpdate {
-  string component = 1; // e.g., "PC1"
-  string state = 2;     // e.g., "STARTUP", "ON", etc.
-  int32 numeric_value = 3; // Optional, e.g., temperature or signal level
+message ButtonPress {
+  string button_id = 1;
+  bool pressed = 2;
+}
+
+message StateUpdate {
+  string component_id = 1;
+  string status = 2;  // For now, keep this generic (e.g., "ON", "INIT", etc.)
 }

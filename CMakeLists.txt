@@ -21,10 +21,24 @@ set(SOURCES
     simulator_config.cpp
     peripheral_controller.cpp
     generated/reactor.pb.cc
+    bus_client.hpp
+    pipe_bus_client.hpp
+    pipe_bus_client.cpp
 )
 
 # --- Create the executable ---
 add_executable(reactor_ui ${SOURCES})
+
+add_executable(bus_router
+    bus_router.cpp
+)
+
+add_executable(controller_runner
+    controller_runner.cpp
+    pipe_bus_client.cpp
+    init_manager.cpp
+)
+
 
 # --- Include protobuf headers ---
 target_include_directories(reactor_ui PRIVATE

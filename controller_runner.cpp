@@ -1,17 +1,23 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <memory>
 #include "tick_engine.hpp"
-#include "subsystems/core_system.hpp"
-#include "subsystems/ctrl_system.hpp"
-#include "subsystems/gen_system.hpp"
-#include "subsystems/xfer_system.hpp"
+#include "init_manager.hpp"
+#include "core_system.hpp"
+#include "ctrl_system.hpp"
+#include "gen_system.hpp"
+#include "xfer_system.hpp"
+#include "pipe_bus_client.hpp"
+
 
 int main() {
     std::cout << "Starting Fidget Reactor simulation...\n";
     int tickCount = 0;
 
     ControllerState state;
+    auto bus_client = std::make_shared<PipeBusClient>("init"); 
+    InitManager testInit(state, bus_client);
     MessageBus bus;
     tickEngine::TickEngine engine(state, bus);
 
