@@ -3,14 +3,14 @@
 #include "controller_core.hpp"
 #include "message_bus.hpp"
 #include "tick_engine.hpp"
-#include "subsystems/core_system.hpp"
-#include "subsystems/ctrl_system.hpp"
-#include "subsystems/gen_system.hpp"
-#include "subsystems/xfer_system.hpp"
-#include "process_managers/init_manager.hpp"
-#include "process_managers/startup_manager.hpp"
-#include "process_managers/test_manager.hpp"
-#include "process_managers/shutdown_manager.hpp"
+#include "core_system.hpp"
+#include "ctrl_system.hpp"
+#include "gen_system.hpp"
+#include "xfer_system.hpp"
+#include "init_manager.hpp"
+#include "startup_manager.hpp"
+#include "test_manager.hpp"
+#include "shutdown_manager.hpp"
 
 class ControllerManager {
 public:

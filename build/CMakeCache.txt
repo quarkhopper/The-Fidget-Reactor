@@ -73,6 +73,9 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=/INCREMENTAL:NO
 //Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=/debug /INCREMENTAL
 
+//No help, variable specified on the command line.
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
+
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/pkgRedirects
 
@@ -180,7 +183,7 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //No help, variable specified on the command line.
-CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=../vcpkg/scripts/buildsystems/vcpkg.cmake
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=C:/vcpkg/scripts/buildsystems/vcpkg.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -198,16 +201,16 @@ FidgetReactor_IS_TOP_LEVEL:STATIC=ON
 FidgetReactor_SOURCE_DIR:STATIC=C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor
 
 //The directory containing a CMake configuration file for Protobuf.
-Protobuf_DIR:PATH=C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/protobuf
+Protobuf_DIR:PATH=C:/vcpkg/installed/x64-windows/share/protobuf
 
 //Path to a program.
-Protobuf_PROTOC_EXECUTABLE:FILEPATH=C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/tools/protobuf/protoc.exe
+Protobuf_PROTOC_EXECUTABLE:FILEPATH=C:/vcpkg/installed/x64-windows/tools/protobuf/protoc.exe
 
 //The directory containing a CMake configuration file for SDL2.
-SDL2_DIR:PATH=C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/sdl2
+SDL2_DIR:PATH=C:/vcpkg/installed/x64-windows/share/sdl2
 
 //The directory containing a CMake configuration file for SDL2_ttf.
-SDL2_ttf_DIR:PATH=C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/SDL2_ttf
+SDL2_ttf_DIR:PATH=C:/vcpkg/installed/x64-windows/share/SDL2_ttf
 
 //Automatically copy dependencies into the output directory for
 // executables.
@@ -215,7 +218,7 @@ VCPKG_APPLOCAL_DEPS:BOOL=ON
 
 //The directory which contains the installed libraries for each
 // triplet
-VCPKG_INSTALLED_DIR:PATH=C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed
+VCPKG_INSTALLED_DIR:PATH=C:/vcpkg/installed
 
 //The path to the vcpkg manifest directory.
 VCPKG_MANIFEST_DIR:PATH=
@@ -256,16 +259,13 @@ Z_VCPKG_PWSH_PATH:FILEPATH=Z_VCPKG_PWSH_PATH-NOTFOUND
 
 //The directory which contains the installed libraries for each
 // triplet
-_VCPKG_INSTALLED_DIR:PATH=C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed
+_VCPKG_INSTALLED_DIR:PATH=C:/vcpkg/installed
 
 //The directory containing a CMake configuration file for absl.
-absl_DIR:PATH=C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/absl
+absl_DIR:PATH=C:/vcpkg/installed/x64-windows/share/absl
 
 //The directory containing a CMake configuration file for nlohmann_json.
-nlohmann_json_DIR:PATH=C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/nlohmann_json
-
-//The directory containing a CMake configuration file for protobuf.
-protobuf_DIR:PATH=C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/protobuf
+nlohmann_json_DIR:PATH=C:/vcpkg/installed/x64-windows/share/nlohmann_json
 
 //CMake built-in FindProtobuf.cmake module compatible
 protobuf_MODULE_COMPATIBLE:BOOL=OFF
@@ -274,7 +274,7 @@ protobuf_MODULE_COMPATIBLE:BOOL=OFF
 protobuf_VERBOSE:BOOL=OFF
 
 //The directory containing a CMake configuration file for utf8_range.
-utf8_range_DIR:PATH=C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/utf8_range
+utf8_range_DIR:PATH=C:/vcpkg/installed/x64-windows/share/utf8_range
 
 
 ########################
@@ -418,11 +418,11 @@ CMAKE_TOOLCHAIN_FILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Protobuf
-FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/tools/protobuf/protoc.exe][optimized;C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/bin/libprotobuf.dll;debug;C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/debug/bin/libprotobufd.dll][C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/include][v29.3.0()]
+FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[C:/vcpkg/installed/x64-windows/tools/protobuf/protoc.exe][optimized;C:/vcpkg/installed/x64-windows/bin/libprotobuf.dll;debug;C:/vcpkg/installed/x64-windows/debug/bin/libprotobufd.dll][C:/vcpkg/installed/x64-windows/include][v29.3.0()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding nlohmann_json
-FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/nlohmann_json/nlohmann_jsonConfig.cmake][v3.12.0()]
+FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[C:/vcpkg/installed/x64-windows/share/nlohmann_json/nlohmann_jsonConfig.cmake][v3.12.0()]
 //Install the dependencies listed in your manifest:
 //\n    If this is off, you will have to manually install your dependencies.
 //\n    See https://github.com/microsoft/vcpkg/tree/master/docs/specifications/manifests.md
@@ -436,7 +436,7 @@ Z_VCPKG_CHECK_MANIFEST_MODE:INTERNAL=OFF
 //The path to the PowerShell implementation to use.
 Z_VCPKG_POWERSHELL_PATH:INTERNAL=C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe
 //Vcpkg root directory
-Z_VCPKG_ROOT_DIR:INTERNAL=C:/Users/quark/OneDrive/Documents/GitHub/vcpkg
+Z_VCPKG_ROOT_DIR:INTERNAL=C:/vcpkg
 //ADVANCED property for variable: protobuf_MODULE_COMPATIBLE
 protobuf_MODULE_COMPATIBLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: protobuf_VERBOSE

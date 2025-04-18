@@ -16,10 +16,10 @@
     <ClCompile Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\controller_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\process_managers\init_manager.cpp">
+    <ClCompile Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\init_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\config\simulator_config.cpp">
+    <ClCompile Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\simulator_config.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\peripheral_controller.cpp">
@@ -31,6 +31,9 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="C:\vcpkg\installed\x64-windows\share\nlohmann_json\nlohmann_json.natvis" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">

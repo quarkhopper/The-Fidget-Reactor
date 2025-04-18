@@ -26,7 +26,7 @@ events:
       Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
       Copyright (C) Microsoft Corporation. All rights reserved.
       
-      Build started 4/17/2025 8:18:42 PM.
+      Build started 4/18/2025 10:47:04 AM.
       Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\4.0.1\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
         Creating directory "Debug\\".
@@ -52,7 +52,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.51
+      Time Elapsed 00:00:00.56
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -80,7 +80,7 @@ events:
       Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
       Copyright (C) Microsoft Corporation. All rights reserved.
       
-      Build started 4/17/2025 8:18:42 PM.
+      Build started 4/18/2025 10:47:04 AM.
       Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\4.0.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
         Creating directory "Debug\\".
@@ -106,7 +106,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.36
+      Time Elapsed 00:00:00.37
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -125,53 +125,53 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-3v3gmj"
-      binary: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-3v3gmj"
+      source: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-yzohhk"
+      binary: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-yzohhk"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      VCPKG_INSTALLED_DIR: "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed"
+      VCPKG_INSTALLED_DIR: "C:/vcpkg/installed"
       VCPKG_PREFER_SYSTEM_LIBS: "OFF"
       VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg"
+      Z_VCPKG_ROOT_DIR: "C:/vcpkg"
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-3v3gmj'
+        Change Dir: 'C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-yzohhk'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_f259e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_e8a24.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
         Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
         Copyright (C) Microsoft Corporation. All rights reserved.
         
-        Build started 4/17/2025 8:18:43 PM.
-        Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3v3gmj\\cmTC_f259e.vcxproj" on node 1 (default targets).
+        Build started 4/18/2025 10:47:05 AM.
+        Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yzohhk\\cmTC_e8a24.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_f259e.dir\\Debug\\".
-          Creating directory "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3v3gmj\\Debug\\".
-          Creating directory "cmTC_f259e.dir\\Debug\\cmTC_f259e.tlog\\".
+          Creating directory "cmTC_e8a24.dir\\Debug\\".
+          Creating directory "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yzohhk\\Debug\\".
+          Creating directory "cmTC_e8a24.dir\\Debug\\cmTC_e8a24.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_f259e.dir\\Debug\\cmTC_f259e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Creating "cmTC_e8a24.dir\\Debug\\cmTC_e8a24.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f259e.dir\\Debug\\\\" /Fd"cmTC_f259e.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e8a24.dir\\Debug\\\\" /Fd"cmTC_e8a24.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30159 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
           CMakeCCompilerABI.c
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f259e.dir\\Debug\\\\" /Fd"cmTC_f259e.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e8a24.dir\\Debug\\\\" /Fd"cmTC_e8a24.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCCompilerABI.c"
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3v3gmj\\Debug\\cmTC_f259e.exe" /INCREMENTAL /ILK:"cmTC_f259e.dir\\Debug\\cmTC_f259e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-3v3gmj/Debug/cmTC_f259e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-3v3gmj/Debug/cmTC_f259e.lib" /MACHINE:X64  /machine:x64 cmTC_f259e.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_f259e.vcxproj -> C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3v3gmj\\Debug\\cmTC_f259e.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yzohhk\\Debug\\cmTC_e8a24.exe" /INCREMENTAL /ILK:"cmTC_e8a24.dir\\Debug\\cmTC_e8a24.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-yzohhk/Debug/cmTC_e8a24.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-yzohhk/Debug/cmTC_e8a24.lib" /MACHINE:X64  /machine:x64 cmTC_e8a24.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_e8a24.vcxproj -> C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yzohhk\\Debug\\cmTC_e8a24.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_f259e.dir\\Debug\\cmTC_f259e.tlog\\unsuccessfulbuild".
-          Touching "cmTC_f259e.dir\\Debug\\cmTC_f259e.tlog\\cmTC_f259e.lastbuildstate".
-        Done Building Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3v3gmj\\cmTC_f259e.vcxproj" (default targets).
+          Deleting file "cmTC_e8a24.dir\\Debug\\cmTC_e8a24.tlog\\unsuccessfulbuild".
+          Touching "cmTC_e8a24.dir\\Debug\\cmTC_e8a24.tlog\\cmTC_e8a24.lastbuildstate".
+        Done Building Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yzohhk\\cmTC_e8a24.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.33
+        Time Elapsed 00:00:00.36
         
       exitCode: 0
   -
@@ -211,54 +211,54 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-lzxma6"
-      binary: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-lzxma6"
+      source: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-u0em1i"
+      binary: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-u0em1i"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      VCPKG_INSTALLED_DIR: "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed"
+      VCPKG_INSTALLED_DIR: "C:/vcpkg/installed"
       VCPKG_PREFER_SYSTEM_LIBS: "OFF"
       VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg"
+      Z_VCPKG_ROOT_DIR: "C:/vcpkg"
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-lzxma6'
+        Change Dir: 'C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-u0em1i'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_7c9ac.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_74d8a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
         Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
         Copyright (C) Microsoft Corporation. All rights reserved.
         
-        Build started 4/17/2025 8:18:44 PM.
-        Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lzxma6\\cmTC_7c9ac.vcxproj" on node 1 (default targets).
+        Build started 4/18/2025 10:47:06 AM.
+        Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0em1i\\cmTC_74d8a.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_7c9ac.dir\\Debug\\".
-          Creating directory "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lzxma6\\Debug\\".
-          Creating directory "cmTC_7c9ac.dir\\Debug\\cmTC_7c9ac.tlog\\".
+          Creating directory "cmTC_74d8a.dir\\Debug\\".
+          Creating directory "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0em1i\\Debug\\".
+          Creating directory "cmTC_74d8a.dir\\Debug\\cmTC_74d8a.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_7c9ac.dir\\Debug\\cmTC_7c9ac.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Creating "cmTC_74d8a.dir\\Debug\\cmTC_74d8a.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7c9ac.dir\\Debug\\\\" /Fd"cmTC_7c9ac.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_74d8a.dir\\Debug\\\\" /Fd"cmTC_74d8a.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30159 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
           CMakeCXXCompilerABI.cpp
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7c9ac.dir\\Debug\\\\" /Fd"cmTC_7c9ac.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_74d8a.dir\\Debug\\\\" /Fd"cmTC_74d8a.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lzxma6\\Debug\\cmTC_7c9ac.exe" /INCREMENTAL /ILK:"cmTC_7c9ac.dir\\Debug\\cmTC_7c9ac.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-lzxma6/Debug/cmTC_7c9ac.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-lzxma6/Debug/cmTC_7c9ac.lib" /MACHINE:X64  /machine:x64 cmTC_7c9ac.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_7c9ac.vcxproj -> C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lzxma6\\Debug\\cmTC_7c9ac.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0em1i\\Debug\\cmTC_74d8a.exe" /INCREMENTAL /ILK:"cmTC_74d8a.dir\\Debug\\cmTC_74d8a.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-u0em1i/Debug/cmTC_74d8a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-u0em1i/Debug/cmTC_74d8a.lib" /MACHINE:X64  /machine:x64 cmTC_74d8a.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_74d8a.vcxproj -> C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0em1i\\Debug\\cmTC_74d8a.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_7c9ac.dir\\Debug\\cmTC_7c9ac.tlog\\unsuccessfulbuild".
-          Touching "cmTC_7c9ac.dir\\Debug\\cmTC_7c9ac.tlog\\cmTC_7c9ac.lastbuildstate".
-        Done Building Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lzxma6\\cmTC_7c9ac.vcxproj" (default targets).
+          Deleting file "cmTC_74d8a.dir\\Debug\\cmTC_74d8a.tlog\\unsuccessfulbuild".
+          Touching "cmTC_74d8a.dir\\Debug\\cmTC_74d8a.tlog\\cmTC_74d8a.lastbuildstate".
+        Done Building Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0em1i\\cmTC_74d8a.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.34
+        Time Elapsed 00:00:00.36
         
       exitCode: 0
   -
@@ -296,64 +296,65 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
       - "C:/Program Files/CMake/share/cmake-4.0/Modules/FindThreads.cmake:97 (check_c_source_compiles)"
       - "C:/Program Files/CMake/share/cmake-4.0/Modules/FindThreads.cmake:163 (_threads_check_libc)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake:893 (_find_package)"
+      - "C:/vcpkg/scripts/buildsystems/vcpkg.cmake:893 (_find_package)"
       - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/absl/abslConfig.cmake:4 (find_dependency)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake:893 (_find_package)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/protobuf/protobuf-config.cmake:7 (find_package)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/protobuf/vcpkg-cmake-wrapper.cmake:3 (_find_package)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake:847 (include)"
-      - "CMakeLists.txt:15 (find_package)"
+      - "C:/vcpkg/installed/x64-windows/share/absl/abslConfig.cmake:4 (find_dependency)"
+      - "C:/vcpkg/scripts/buildsystems/vcpkg.cmake:893 (_find_package)"
+      - "C:/vcpkg/installed/x64-windows/share/protobuf/protobuf-config.cmake:7 (find_package)"
+      - "C:/vcpkg/installed/x64-windows/share/protobuf/vcpkg-cmake-wrapper.cmake:3 (_find_package)"
+      - "C:/vcpkg/scripts/buildsystems/vcpkg.cmake:847 (include)"
+      - "CMakeLists.txt:10 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-ayhi8l"
-      binary: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-ayhi8l"
+      source: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-zlc6hf"
+      binary: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-zlc6hf"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      VCPKG_INSTALLED_DIR: "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed"
+      CMAKE_MODULE_PATH: ""
+      VCPKG_INSTALLED_DIR: "C:/vcpkg/installed"
       VCPKG_PREFER_SYSTEM_LIBS: "OFF"
       VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg"
+      Z_VCPKG_ROOT_DIR: "C:/vcpkg"
     buildResult:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-ayhi8l'
+        Change Dir: 'C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-zlc6hf'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_ab48c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_1ee0f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
         Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
         Copyright (C) Microsoft Corporation. All rights reserved.
         
-        Build started 4/17/2025 8:18:45 PM.
-        Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ayhi8l\\cmTC_ab48c.vcxproj" on node 1 (default targets).
+        Build started 4/18/2025 10:47:07 AM.
+        Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zlc6hf\\cmTC_1ee0f.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_ab48c.dir\\Debug\\".
-          Creating directory "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ayhi8l\\Debug\\".
-          Creating directory "cmTC_ab48c.dir\\Debug\\cmTC_ab48c.tlog\\".
+          Creating directory "cmTC_1ee0f.dir\\Debug\\".
+          Creating directory "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zlc6hf\\Debug\\".
+          Creating directory "cmTC_1ee0f.dir\\Debug\\cmTC_1ee0f.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_ab48c.dir\\Debug\\cmTC_ab48c.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Creating "cmTC_1ee0f.dir\\Debug\\cmTC_1ee0f.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ab48c.dir\\Debug\\\\" /Fd"cmTC_ab48c.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ayhi8l\\src.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1ee0f.dir\\Debug\\\\" /Fd"cmTC_1ee0f.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zlc6hf\\src.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30159 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
           src.c
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ab48c.dir\\Debug\\\\" /Fd"cmTC_ab48c.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ayhi8l\\src.c"
-        C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ayhi8l\\src.c(1,10): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ayhi8l\\cmTC_ab48c.vcxproj]
-        Done Building Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ayhi8l\\cmTC_ab48c.vcxproj" (default targets) -- FAILED.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1ee0f.dir\\Debug\\\\" /Fd"cmTC_1ee0f.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zlc6hf\\src.c"
+        C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zlc6hf\\src.c(1,10): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zlc6hf\\cmTC_1ee0f.vcxproj]
+        Done Building Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zlc6hf\\cmTC_1ee0f.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ayhi8l\\cmTC_ab48c.vcxproj" (default target) (1) ->
+        "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zlc6hf\\cmTC_1ee0f.vcxproj" (default target) (1) ->
         (ClCompile target) -> 
-          C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ayhi8l\\src.c(1,10): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ayhi8l\\cmTC_ab48c.vcxproj]
+          C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zlc6hf\\src.c(1,10): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zlc6hf\\cmTC_1ee0f.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.23
+        Time Elapsed 00:00:00.24
         
       exitCode: 1
   -
@@ -362,66 +363,67 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckLibraryExists.cmake:112 (try_compile)"
       - "C:/Program Files/CMake/share/cmake-4.0/Modules/FindThreads.cmake:112 (check_library_exists)"
       - "C:/Program Files/CMake/share/cmake-4.0/Modules/FindThreads.cmake:175 (_threads_check_lib)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake:893 (_find_package)"
+      - "C:/vcpkg/scripts/buildsystems/vcpkg.cmake:893 (_find_package)"
       - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/absl/abslConfig.cmake:4 (find_dependency)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake:893 (_find_package)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/protobuf/protobuf-config.cmake:7 (find_package)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/protobuf/vcpkg-cmake-wrapper.cmake:3 (_find_package)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake:847 (include)"
-      - "CMakeLists.txt:15 (find_package)"
+      - "C:/vcpkg/installed/x64-windows/share/absl/abslConfig.cmake:4 (find_dependency)"
+      - "C:/vcpkg/scripts/buildsystems/vcpkg.cmake:893 (_find_package)"
+      - "C:/vcpkg/installed/x64-windows/share/protobuf/protobuf-config.cmake:7 (find_package)"
+      - "C:/vcpkg/installed/x64-windows/share/protobuf/vcpkg-cmake-wrapper.cmake:3 (_find_package)"
+      - "C:/vcpkg/scripts/buildsystems/vcpkg.cmake:847 (include)"
+      - "CMakeLists.txt:10 (find_package)"
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-bl1pqc"
-      binary: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-bl1pqc"
+      source: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-u0f2tx"
+      binary: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-u0f2tx"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      VCPKG_INSTALLED_DIR: "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed"
+      CMAKE_MODULE_PATH: ""
+      VCPKG_INSTALLED_DIR: "C:/vcpkg/installed"
       VCPKG_PREFER_SYSTEM_LIBS: "OFF"
       VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg"
+      Z_VCPKG_ROOT_DIR: "C:/vcpkg"
     buildResult:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-bl1pqc'
+        Change Dir: 'C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-u0f2tx'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_617de.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_c37be.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
         Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
         Copyright (C) Microsoft Corporation. All rights reserved.
         
-        Build started 4/17/2025 8:18:46 PM.
-        Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bl1pqc\\cmTC_617de.vcxproj" on node 1 (default targets).
+        Build started 4/18/2025 10:47:07 AM.
+        Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0f2tx\\cmTC_c37be.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_617de.dir\\Debug\\".
-          Creating directory "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bl1pqc\\Debug\\".
-          Creating directory "cmTC_617de.dir\\Debug\\cmTC_617de.tlog\\".
+          Creating directory "cmTC_c37be.dir\\Debug\\".
+          Creating directory "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0f2tx\\Debug\\".
+          Creating directory "cmTC_c37be.dir\\Debug\\cmTC_c37be.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_617de.dir\\Debug\\cmTC_617de.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Creating "cmTC_c37be.dir\\Debug\\cmTC_c37be.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_617de.dir\\Debug\\\\" /Fd"cmTC_617de.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bl1pqc\\CheckFunctionExists.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c37be.dir\\Debug\\\\" /Fd"cmTC_c37be.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0f2tx\\CheckFunctionExists.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30159 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
           CheckFunctionExists.c
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_617de.dir\\Debug\\\\" /Fd"cmTC_617de.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bl1pqc\\CheckFunctionExists.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c37be.dir\\Debug\\\\" /Fd"cmTC_c37be.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0f2tx\\CheckFunctionExists.c"
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bl1pqc\\Debug\\cmTC_617de.exe" /INCREMENTAL /ILK:"cmTC_617de.dir\\Debug\\cmTC_617de.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-bl1pqc/Debug/cmTC_617de.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-bl1pqc/Debug/cmTC_617de.lib" /MACHINE:X64  /machine:x64 cmTC_617de.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bl1pqc\\cmTC_617de.vcxproj]
-        Done Building Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bl1pqc\\cmTC_617de.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0f2tx\\Debug\\cmTC_c37be.exe" /INCREMENTAL /ILK:"cmTC_c37be.dir\\Debug\\cmTC_c37be.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-u0f2tx/Debug/cmTC_c37be.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-u0f2tx/Debug/cmTC_c37be.lib" /MACHINE:X64  /machine:x64 cmTC_c37be.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0f2tx\\cmTC_c37be.vcxproj]
+        Done Building Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0f2tx\\cmTC_c37be.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bl1pqc\\cmTC_617de.vcxproj" (default target) (1) ->
+        "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0f2tx\\cmTC_c37be.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bl1pqc\\cmTC_617de.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u0f2tx\\cmTC_c37be.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.29
+        Time Elapsed 00:00:00.30
         
       exitCode: 1
   -
@@ -430,66 +432,67 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckLibraryExists.cmake:112 (try_compile)"
       - "C:/Program Files/CMake/share/cmake-4.0/Modules/FindThreads.cmake:112 (check_library_exists)"
       - "C:/Program Files/CMake/share/cmake-4.0/Modules/FindThreads.cmake:176 (_threads_check_lib)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake:893 (_find_package)"
+      - "C:/vcpkg/scripts/buildsystems/vcpkg.cmake:893 (_find_package)"
       - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/absl/abslConfig.cmake:4 (find_dependency)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake:893 (_find_package)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/protobuf/protobuf-config.cmake:7 (find_package)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed/x64-windows/share/protobuf/vcpkg-cmake-wrapper.cmake:3 (_find_package)"
-      - "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake:847 (include)"
-      - "CMakeLists.txt:15 (find_package)"
+      - "C:/vcpkg/installed/x64-windows/share/absl/abslConfig.cmake:4 (find_dependency)"
+      - "C:/vcpkg/scripts/buildsystems/vcpkg.cmake:893 (_find_package)"
+      - "C:/vcpkg/installed/x64-windows/share/protobuf/protobuf-config.cmake:7 (find_package)"
+      - "C:/vcpkg/installed/x64-windows/share/protobuf/vcpkg-cmake-wrapper.cmake:3 (_find_package)"
+      - "C:/vcpkg/scripts/buildsystems/vcpkg.cmake:847 (include)"
+      - "CMakeLists.txt:10 (find_package)"
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-b1ujvo"
-      binary: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-b1ujvo"
+      source: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-n93lyt"
+      binary: "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-n93lyt"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      VCPKG_INSTALLED_DIR: "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg/installed"
+      CMAKE_MODULE_PATH: ""
+      VCPKG_INSTALLED_DIR: "C:/vcpkg/installed"
       VCPKG_PREFER_SYSTEM_LIBS: "OFF"
       VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "C:/Users/quark/OneDrive/Documents/GitHub/vcpkg"
+      Z_VCPKG_ROOT_DIR: "C:/vcpkg"
     buildResult:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-b1ujvo'
+        Change Dir: 'C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-n93lyt'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_a037e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_24c55.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
         Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
         Copyright (C) Microsoft Corporation. All rights reserved.
         
-        Build started 4/17/2025 8:18:46 PM.
-        Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b1ujvo\\cmTC_a037e.vcxproj" on node 1 (default targets).
+        Build started 4/18/2025 10:47:08 AM.
+        Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n93lyt\\cmTC_24c55.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_a037e.dir\\Debug\\".
-          Creating directory "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b1ujvo\\Debug\\".
-          Creating directory "cmTC_a037e.dir\\Debug\\cmTC_a037e.tlog\\".
+          Creating directory "cmTC_24c55.dir\\Debug\\".
+          Creating directory "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n93lyt\\Debug\\".
+          Creating directory "cmTC_24c55.dir\\Debug\\cmTC_24c55.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_a037e.dir\\Debug\\cmTC_a037e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Creating "cmTC_24c55.dir\\Debug\\cmTC_24c55.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a037e.dir\\Debug\\\\" /Fd"cmTC_a037e.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b1ujvo\\CheckFunctionExists.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_24c55.dir\\Debug\\\\" /Fd"cmTC_24c55.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n93lyt\\CheckFunctionExists.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30159 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
           CheckFunctionExists.c
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a037e.dir\\Debug\\\\" /Fd"cmTC_a037e.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b1ujvo\\CheckFunctionExists.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_24c55.dir\\Debug\\\\" /Fd"cmTC_24c55.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n93lyt\\CheckFunctionExists.c"
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b1ujvo\\Debug\\cmTC_a037e.exe" /INCREMENTAL /ILK:"cmTC_a037e.dir\\Debug\\cmTC_a037e.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-b1ujvo/Debug/cmTC_a037e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-b1ujvo/Debug/cmTC_a037e.lib" /MACHINE:X64  /machine:x64 cmTC_a037e.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b1ujvo\\cmTC_a037e.vcxproj]
-        Done Building Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b1ujvo\\cmTC_a037e.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n93lyt\\Debug\\cmTC_24c55.exe" /INCREMENTAL /ILK:"cmTC_24c55.dir\\Debug\\cmTC_24c55.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-n93lyt/Debug/cmTC_24c55.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build/CMakeFiles/CMakeScratch/TryCompile-n93lyt/Debug/cmTC_24c55.lib" /MACHINE:X64  /machine:x64 cmTC_24c55.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n93lyt\\cmTC_24c55.vcxproj]
+        Done Building Project "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n93lyt\\cmTC_24c55.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b1ujvo\\cmTC_a037e.vcxproj" (default target) (1) ->
+        "C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n93lyt\\cmTC_24c55.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b1ujvo\\cmTC_a037e.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\quark\\OneDrive\\Documents\\GitHub\\The-Fidget-Reactor\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n93lyt\\cmTC_24c55.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.28
+        Time Elapsed 00:00:00.29
         
       exitCode: 1
 ...
