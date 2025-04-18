@@ -1,26 +1,26 @@
-// xfer_system.hpp
+// core_system.hpp
 #pragma once
 
 #include <iostream>
-#include "../controller_core.hpp"
-#include "../message_bus.hpp"
+#include "controller_core.hpp"
+#include "message_bus.hpp"
 #include "subsystem.hpp"
 
-class XferSystem : public Subsystem {
+class CoreSystem : public Subsystem {
 public:
-    XferSystem(ControllerState& state)
+    CoreSystem(ControllerState& state)
         : state(state) {}
 
     void initialize() override {
-        std::cout << "[XferSystem] Initialized.\n";
+        std::cout << "[CoreSystem] Initialized.\n";
     }
 
     void on_tick() override {
-        std::cout << "[XferSystem] Tick.\n";
+        std::cout << "[CoreSystem] Tick.\n";
     }
 
     void handle_message(const Message& msg) override {
-        std::cout << "[XferSystem] Received message: type="
+        std::cout << "[CoreSystem] Received message: type="
                   << static_cast<int>(msg.type) << "\n";
     }
 

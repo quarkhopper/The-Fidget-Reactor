@@ -1,26 +1,26 @@
-// core_system.hpp
+// gen_system.hpp
 #pragma once
 
 #include <iostream>
-#include "../controller_core.hpp"
-#include "../message_bus.hpp"
+#include "controller_core.hpp"
+#include "message_bus.hpp"
 #include "subsystem.hpp"
 
-class CoreSystem : public Subsystem {
+class GenSystem : public Subsystem {
 public:
-    CoreSystem(ControllerState& state)
+GenSystem(ControllerState& state)
         : state(state) {}
 
     void initialize() override {
-        std::cout << "[CoreSystem] Initialized.\n";
+        std::cout << "[GenSystem] Initialized.\n";
     }
 
     void on_tick() override {
-        std::cout << "[CoreSystem] Tick.\n";
+        std::cout << "[GenSystem] Tick.\n";
     }
 
     void handle_message(const Message& msg) override {
-        std::cout << "[CoreSystem] Received message: type="
+        std::cout << "[GenSystem] Received message: type="
                   << static_cast<int>(msg.type) << "\n";
     }
 

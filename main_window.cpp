@@ -5,7 +5,7 @@
 #include "pin_sim.hpp"
 #include "debug_console.hpp"
 #include "controller_manager.hpp"
-#include "config/simulator_config.hpp"
+#include "simulator_config.hpp"
 #include "peripheral_controller.hpp"
 
 ControllerManager controller;

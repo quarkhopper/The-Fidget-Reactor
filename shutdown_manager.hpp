@@ -1,13 +1,13 @@
-// startup_manager.hpp
+// shutdown_manager.hpp
 #pragma once
 
 #include <functional>
-#include "../controller_core.hpp"
-#include "../message_bus.hpp"
+#include "controller_core.hpp"
+#include "message_bus.hpp"
 
-class StartupManager {
+class ShutdownManager {
 public:
-    StartupManager(ControllerState& state, MessageBus& bus)
+    ShutdownManager(ControllerState& state, MessageBus& bus)
         : state(state), bus(bus) {}
 
     void begin();

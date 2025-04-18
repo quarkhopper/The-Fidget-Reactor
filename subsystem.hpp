@@ -1,7 +1,7 @@
 // subsystem.hpp
 #pragma once
 
-#include "../message_bus.hpp" // <-- this brings in the Message struct
+#include "message_bus.hpp" // <-- this brings in the Message struct
 
 class Subsystem {
 public:

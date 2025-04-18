@@ -2,8 +2,8 @@
 #pragma once
 
 #include <iostream>
-#include "../controller_core.hpp"
-#include "../message_bus.hpp"
+#include "controller_core.hpp"
+#include "message_bus.hpp"
 #include "subsystem.hpp"
 
 class CtrlSystem : public Subsystem {

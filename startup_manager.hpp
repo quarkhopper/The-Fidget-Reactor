@@ -1,13 +1,13 @@
-// init_manager.hpp
+// startup_manager.hpp
 #pragma once
 
 #include <functional>
-#include "../controller_core.hpp"
-#include "../message_bus.hpp"
+#include "controller_core.hpp"
+#include "message_bus.hpp"
 
-class InitManager {
+class StartupManager {
 public:
-    InitManager(ControllerState& state, MessageBus& bus)
+    StartupManager(ControllerState& state, MessageBus& bus)
         : state(state), bus(bus) {}
 
     void begin();

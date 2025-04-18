@@ -1,13 +1,13 @@
-// shutdown_manager.hpp
+// test_manager.hpp
 #pragma once
 
 #include <functional>
-#include "../controller_core.hpp"
-#include "../message_bus.hpp"
+#include "controller_core.hpp"
+#include "message_bus.hpp"
 
-class ShutdownManager {
+class TestManager {
 public:
-    ShutdownManager(ControllerState& state, MessageBus& bus)
+    TestManager(ControllerState& state, MessageBus& bus)
         : state(state), bus(bus) {}
 
     void begin();

@@ -1,13 +1,13 @@
-// test_manager.hpp
+// init_manager.hpp
 #pragma once
 
 #include <functional>
-#include "../controller_core.hpp"
-#include "../message_bus.hpp"
+#include "controller_core.hpp"
+#include "message_bus.hpp"
 
-class TestManager {
+class InitManager {
 public:
-    TestManager(ControllerState& state, MessageBus& bus)
+    InitManager(ControllerState& state, MessageBus& bus)
         : state(state), bus(bus) {}
 
     void begin();

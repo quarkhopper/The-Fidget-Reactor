@@ -2,7 +2,7 @@
 #include <string>
 #include <unordered_map>
 #include <nlohmann/json.hpp>
-#include "interfaces/configurable_component.hpp"
+#include "configurable_component.hpp"
 #include "controller_manager.hpp"  // To include the ControllerManager for the external reference
 
 class PeripheralController : public ConfigurableComponent {

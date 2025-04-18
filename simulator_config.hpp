@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include <memory>
 #include <nlohmann/json.hpp>
-#include "../interfaces/configurable_component.hpp"
+#include "configurable_component.hpp"
 
 class SimulatorConfig {
 public:

@@ -1,7 +1,7 @@
 // simulator_config.cpp
 
 #include "simulator_config.hpp"
-#include "../peripheral_controller.hpp"
+#include "peripheral_controller.hpp"
 #include <filesystem>
 #include <fstream>
 #include <iostream>

@@ -1,8 +1,8 @@
 // cool_system.hpp
 #pragma once
 
-#include "../controller_core.hpp"
-#include "../message_bus.hpp"
+#include "controller_core.hpp"
+#include "message_bus.hpp"
 #include "subsystem.hpp"
 #include <iostream>
 

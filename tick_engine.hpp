@@ -5,7 +5,7 @@
 #include <vector>
 #include "controller_core.hpp"
 #include "message_bus.hpp"
-#include "subsystems/subsystem.hpp"
+#include "subsystem.hpp"
 
 namespace tickEngine {
 
