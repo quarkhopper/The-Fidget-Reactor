@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\build\CMakeFiles\fa72e4fea535ad3739c24aebabf45664\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{CD380F1A-C41E-3FEC-AFA1-C196EE6AD63D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
