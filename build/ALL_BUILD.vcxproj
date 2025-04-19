@@ -69,7 +69,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -79,7 +79,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -89,7 +89,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -99,7 +99,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -181,6 +181,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ProjectReference Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\build\controller_runner.vcxproj">
       <Project>{5C8C8AAE-5268-37E2-B02D-B097936C7BD3}</Project>
       <Name>controller_runner</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\build\phc.vcxproj">
+      <Project>{D60F7024-687F-3C4F-9D8B-3B9A03F54E0E}</Project>
+      <Name>phc</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\build\reactor_ui.vcxproj">
       <Project>{03B831F7-61D8-3D22-B07E-9FA536FE7747}</Project>

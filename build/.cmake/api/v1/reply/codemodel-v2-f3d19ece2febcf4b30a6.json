@@ -1,0 +1,372 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "FidgetReactor",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-7f276180a05aeab55448.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-906278e27c530c730418.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bus_router::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bus_router-Debug-0ebb1140d613c9600aa2.json",
+					"name" : "bus_router",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "controller_runner::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-controller_runner-Debug-e5d693796a87f5d54744.json",
+					"name" : "controller_runner",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "phc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-phc-Debug-e1ea48cb276b8ecfb2c6.json",
+					"name" : "phc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "reactor_ui::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-reactor_ui-Debug-2b69fd148fc1274c03b4.json",
+					"name" : "reactor_ui",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "FidgetReactor",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-7f276180a05aeab55448.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-906278e27c530c730418.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bus_router::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bus_router-Release-c8a97dd87116d4765501.json",
+					"name" : "bus_router",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "controller_runner::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-controller_runner-Release-2eaba22523780d4390c7.json",
+					"name" : "controller_runner",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "phc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-phc-Release-7aed66eff71b977cd34f.json",
+					"name" : "phc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "reactor_ui::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-reactor_ui-Release-7d6375da046872afea00.json",
+					"name" : "reactor_ui",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "FidgetReactor",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-7f276180a05aeab55448.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-906278e27c530c730418.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bus_router::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bus_router-MinSizeRel-dc84c614c427941800a1.json",
+					"name" : "bus_router",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "controller_runner::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-controller_runner-MinSizeRel-353d2f87ca3cda02496d.json",
+					"name" : "controller_runner",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "phc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-phc-MinSizeRel-1918f1acd078365de286.json",
+					"name" : "phc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "reactor_ui::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-reactor_ui-MinSizeRel-21d12d32d25a8900c046.json",
+					"name" : "reactor_ui",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "FidgetReactor",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-7f276180a05aeab55448.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-906278e27c530c730418.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bus_router::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bus_router-RelWithDebInfo-56905fbb6d6b1a185f30.json",
+					"name" : "bus_router",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "controller_runner::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-controller_runner-RelWithDebInfo-d77fe594c27f651a2662.json",
+					"name" : "controller_runner",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "phc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-phc-RelWithDebInfo-445bae3655ec74bc2dc5.json",
+					"name" : "phc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "reactor_ui::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-reactor_ui-RelWithDebInfo-f6a8a20e275ae8ee9991.json",
+					"name" : "reactor_ui",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/build",
+		"source" : "C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

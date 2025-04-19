@@ -32,7 +32,9 @@ A temporary, software-only interface that serves as both the simulated front pan
 - Sends **raw high/low pin signals** to the ATtiny sim via pipe (not protobuf)
 - Communicates with ATtiny simulator only
 - Is implemented as `reactor_ui.exe`
-- Responsible for launching and monitoring the ESP32 and ATtiny simulation processes, functioning as a surrogate boot ROM until a hardware or simulated bootloader takes over
+- **Responsible for launching and monitoring the ESP32 and ATtiny simulation processes**
+- **Reads a configuration file that defines which simulation processes to launch and their parameters**
+- Has no hardcoded knowledge of components or system layout—this is defined in static config files and loaded dynamically
 - Will be replaced entirely with physical hardware in production
 
 ## 🔀 Bus Router (Optional for Simulation)
@@ -61,4 +63,3 @@ This is especially useful if more than one process needs access to a shared bus 
   3. Debug UI (reactor_ui.exe): raw pin signal sender and process launcher/monitor
 - A fourth process (bus router) may be introduced to route pipes cleanly between the three.
 - The existing `config/` directory reflects this architecture.
-

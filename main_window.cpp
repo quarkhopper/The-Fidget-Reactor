@@ -1,19 +1,48 @@
 // main_window.cpp
+
+#include <windows.h>
 #include <SDL2/SDL.h>
 #include <iostream>
+#include <cstdlib>
 #include "power_button.hpp"
 #include "pin_sim.hpp"
 #include "debug_console.hpp"
 #include "controller_manager.hpp"
-#include "simulator_config.hpp"
-#include "peripheral_controller.hpp"
 
+// Declare controller manager and config
 ControllerManager controller;
-SimulatorConfig simConfig;
-
 
 const int WINDOW_WIDTH = 1200;
 const int WINDOW_HEIGHT = 800;
+
+// Launches an external .exe without opening a popup
+bool launchProcess(const char* path) {
+    STARTUPINFOA si;
+    PROCESS_INFORMATION pi;
+
+    ZeroMemory(&si, sizeof(si));
+    si.cb = sizeof(si);
+    ZeroMemory(&pi, sizeof(pi));
+
+    BOOL success = CreateProcessA(
+        nullptr,                // Application name
+        (LPSTR)path,            // Command line
+        nullptr, nullptr,       // Process & thread attributes
+        FALSE,                  // Inherit handles
+        CREATE_NO_WINDOW,       // Creation flags
+        nullptr, nullptr,       // Environment, current directory
+        &si, &pi                // STARTUPINFO and PROCESS_INFORMATION
+    );
+
+    if (success) {
+        CloseHandle(pi.hProcess);
+        CloseHandle(pi.hThread);
+    } else {
+        std::cout << "[BOOT] Failed to launch: " << path << std::endl;
+    }
+
+    return success;
+}
 
 int main(int argc, char* argv[]) {
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
@@ -21,21 +50,20 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // Register components
-    PeripheralController phcA;
-    simConfig.registerComponent("phc_a", &phcA);
-
-    // Load all configs from the config/ directory
-    simConfig.loadAllConfigs("config/");
-
+    // Initialize debug console and redirect std::cout
     DebugCoutRedirect redirect;
     DebugConsole::init("C:/Windows/Fonts/consola.ttf", 14);
-    DebugConsole::setActiveMMTag("PC1");
-    std::cout << "[boot] Debug console initialized" << std::endl;
-    std::cout << "[PC1] MM logging active for PC1" << std::endl;
-    std::cout << "This line should not appear in MM (untagged)" << std::endl;
-    std::cout << "[PC2] This line will be buffered but not shown" << std::endl;
+    DebugConsole::setActiveMMTag("BOOT");
 
+    // Boot messages
+    std::cout << "[BOOT] Fidget Reactor UI initializing..." << std::endl;
+    std::cout << "[BOOT] Launching ESP32 simulation..." << std::endl;
+    launchProcess("build\\Debug\\controller_runner.exe");
+
+    std::cout << "[BOOT] Launching PHC controller: phc_a..." << std::endl;
+    launchProcess("build\\Debug\\phc.exe config\\components\\phc_a.json");
+
+    // Load UI window
     SDL_Window* window = SDL_CreateWindow("Fidget Reactor UI",
                                           SDL_WINDOWPOS_CENTERED,
                                           SDL_WINDOWPOS_CENTERED,
@@ -71,38 +99,33 @@ int main(int argc, char* argv[]) {
             }
         }
 
-        controller.tick(0); // or pass frame count
+        controller.tick(0);
 
         SDL_SetRenderDrawColor(renderer, 20, 20, 20, 255);
         SDL_RenderClear(renderer);
 
-        // --- TEST INPUTS PANEL ---
+        // Panels
         SDL_Rect testPanel = {0, 0, 300, 450};
-        SDL_SetRenderDrawColor(renderer, 0, 0, 100, 255); // Dark Blue
+        SDL_SetRenderDrawColor(renderer, 0, 0, 100, 255);
         SDL_RenderFillRect(renderer, &testPanel);
 
-        // --- DEBUG CONSOLE ---
         SDL_Rect debugConsole = {0, 450, 600, 350};
-        SDL_SetRenderDrawColor(renderer, 50, 50, 50, 255); // Dark Gray
+        SDL_SetRenderDrawColor(renderer, 50, 50, 50, 255);
         SDL_RenderFillRect(renderer, &debugConsole);
 
-        // --- MULTIPURPOSE MONITOR ---
         SDL_Rect mmPanel = {600, 450, 600, 350};
-        SDL_SetRenderDrawColor(renderer, 30, 30, 30, 255); // Very Dark Gray
+        SDL_SetRenderDrawColor(renderer, 30, 30, 30, 255);
         SDL_RenderFillRect(renderer, &mmPanel);
 
-        // --- SPLITTER ---
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
         SDL_RenderDrawLine(renderer, 600, 450, 600, 800);
 
-        // --- MAIN PANEL SIMULATION ZONE ---
         SDL_Rect mainPanel = {300, 0, 900, 450};
         SDL_SetRenderDrawColor(renderer, 40, 40, 40, 255);
         SDL_RenderFillRect(renderer, &mainPanel);
 
         masterButton.render(renderer);
 
-        // --- DEBUG CONSOLE TEXT ---
         DebugConsole::render(renderer, 0, 450);
         DebugConsole::renderMM(renderer, 600, 450);
 

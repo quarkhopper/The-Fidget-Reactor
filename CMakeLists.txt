@@ -4,48 +4,46 @@ project(FidgetReactor)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# --- Find dependencies ---
+# --- Dependencies ---
 find_package(SDL2 CONFIG REQUIRED)
 find_package(SDL2_ttf CONFIG REQUIRED)
 find_package(Protobuf CONFIG REQUIRED)
 find_package(nlohmann_json CONFIG REQUIRED)
 
-# --- List your source files ---
-set(SOURCES
+# --- Common includes ---
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/generated
+)
+
+# --- Shared sources ---
+# --- Simplify reactor_ui sources ---
+set(REACTOR_UI_SOURCES
     main_window.cpp
     power_button.cpp
     pin_sim.cpp
-    debug_console.cpp
     controller_manager.cpp
     init_manager.cpp
-    simulator_config.cpp
-    peripheral_controller.cpp
     generated/reactor.pb.cc
-    bus_client.hpp
-    pipe_bus_client.hpp
     pipe_bus_client.cpp
 )
 
-# --- Create the executable ---
-add_executable(reactor_ui ${SOURCES})
-
-add_executable(bus_router
-    bus_router.cpp
-)
-
+# --- Executables ---
+# --- Update reactor_ui executable ---
+add_executable(reactor_ui ${REACTOR_UI_SOURCES})
+add_executable(bus_router bus_router.cpp)
 add_executable(controller_runner
     controller_runner.cpp
     pipe_bus_client.cpp
     init_manager.cpp
 )
-
-
-# --- Include protobuf headers ---
-target_include_directories(reactor_ui PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/generated
+# --- Remove unused files from phc ---
+add_executable(phc
+    phc.cpp
+    base_controller.cpp
+    config_helper.cpp
 )
 
-# --- Link all required libraries ---
+# --- Link libraries ---
 target_link_libraries(reactor_ui
     PRIVATE
         protobuf::libprotobuf
@@ -53,4 +51,11 @@ target_link_libraries(reactor_ui
         $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
         $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
         $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2_ttf>,SDL2_ttf::SDL2_ttf,SDL2_ttf::SDL2_ttf-static>
+)
+
+target_link_libraries(phc
+    PRIVATE
+        nlohmann_json::nlohmann_json
+        SDL2::SDL2
+        SDL2::SDL2main
 )
