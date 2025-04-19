@@ -33,3 +33,5 @@
 
 # stop the nul dev poops
 simulation/nul
+/build/
+
