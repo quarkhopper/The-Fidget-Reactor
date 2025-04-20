@@ -7,8 +7,6 @@ message Message {
   string to = 2;
   oneof payload {
     ButtonPress button_press = 3;
-    StateUpdate state_update = 4;
-    // Add more message types here
   }
 }
 
@@ -17,7 +15,3 @@ message ButtonPress {
   bool pressed = 2;
 }
 
-message StateUpdate {
-  string component_id = 1;
-  string status = 2;  // For now, keep this generic (e.g., "ON", "INIT", etc.)
-}

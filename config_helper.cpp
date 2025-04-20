@@ -3,6 +3,7 @@
 #include <iostream>
 #include <stdexcept>
 #include "nlohmann/json.hpp"
+#include "pipe_bus_client.hpp" // Updated to use PipeBusClient instead of BusClient
 
 nlohmann::json ConfigHelper::loadControllerConfig(const std::string& controllerName, const std::string& configFilePath) {
     std::ifstream configFile(configFilePath);
@@ -75,7 +76,7 @@ void ConfigHelper::setupPinSimWiring(const nlohmann::json& wiringConfig, std::un
     }
 }
 
-void ConfigHelper::setupControllerBus(const nlohmann::json& config, BusClient& busClient) {
+void ConfigHelper::setupControllerBus(const nlohmann::json& config, PipeBusClient& busClient) {
     if (config.contains("shared_pipe")) {
         std::string sharedPipe = config["shared_pipe"].get<std::string>();
         std::cout << "[ConfigHelper] Setting up controller bus on shared pipe: " << sharedPipe << std::endl;

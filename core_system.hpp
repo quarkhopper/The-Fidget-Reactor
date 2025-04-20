@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include "controller_core.hpp"
-#include "message_bus.hpp"
 #include "subsystem.hpp"
 
 class CoreSystem : public Subsystem {
@@ -17,11 +16,6 @@ public:
 
     void on_tick() override {
         std::cout << "[CoreSystem] Tick.\n";
-    }
-
-    void handle_message(const Message& msg) override {
-        std::cout << "[CoreSystem] Received message: type="
-                  << static_cast<int>(msg.type) << "\n";
     }
 
 private:

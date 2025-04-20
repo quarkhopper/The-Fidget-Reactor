@@ -4,7 +4,7 @@
 #include <unordered_map>
 #include <nlohmann/json.hpp>
 #include "pin_sim.hpp"
-#include "bus_client.hpp"
+#include "pipe_bus_client.hpp" // Updated to use PipeBusClient instead of BusClient
 
 class ConfigHelper {
 public:
@@ -16,5 +16,5 @@ public:
 
     static void initializePipes(const nlohmann::json& config);
     static void setupPinSimWiring(const nlohmann::json& wiringConfig, std::unordered_map<std::string, PinSim>& pinSims);
-    static void setupControllerBus(const nlohmann::json& config, BusClient& busClient);
+    static void setupControllerBus(const nlohmann::json& config, PipeBusClient& busClient);
 };

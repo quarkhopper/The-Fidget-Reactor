@@ -17,13 +17,26 @@ include_directories(
 
 # --- Shared sources ---
 # --- Simplify reactor_ui sources ---
-# Add debug_console.cpp to reactor_ui sources
+# Updated to reflect the merged `PipeBusClient` class
+# Add Protobuf generation for reactor.proto
+set(PROTO_SRC proto/reactor.proto)
+set(GENERATED_SRC generated/reactor.pb.cc)
+set(GENERATED_HDR generated/reactor.pb.h)
+
+find_package(Protobuf REQUIRED)
+protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ${PROTO_SRC})
+
+# Ensure generated files are included in the build
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
+add_custom_target(generate_proto ALL DEPENDS ${PROTO_SRCS} ${PROTO_HDRS})
+
+# Add generated files to the reactor_ui target
 set(REACTOR_UI_SOURCES
     main_window.cpp
     power_button.cpp
     pin_sim.cpp
     init_manager.cpp
-    generated/reactor.pb.cc
+    ${PROTO_SRCS}
     pipe_bus_client.cpp
     debug_console.cpp
 )
@@ -31,7 +44,6 @@ set(REACTOR_UI_SOURCES
 # --- Executables ---
 # --- Update reactor_ui executable ---
 add_executable(reactor_ui ${REACTOR_UI_SOURCES})
-add_executable(bus_router bus_router.cpp)
 add_executable(main_controller
     main_controller.cpp
     pipe_bus_client.cpp
