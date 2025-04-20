@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <stdexcept>
+#include "nlohmann/json.hpp"
 
 nlohmann::json ConfigHelper::loadControllerConfig(const std::string& controllerName, const std::string& configFilePath) {
     std::ifstream configFile(configFilePath);
@@ -39,5 +40,45 @@ void ConfigHelper::validateWiring(const nlohmann::json& wiringConfig, const nloh
                 std::cerr << "Error: Pin " << pin << " not found in " << controllerName << std::endl;
             }
         }
+    }
+}
+
+void ConfigHelper::initializePipes(const nlohmann::json& config) {
+    // Create pipes for controller communication
+    if (config.contains("shared_pipe")) {
+        std::cout << "[ConfigHelper] Initializing shared pipe: " << config["shared_pipe"].get<std::string>() << std::endl;
+        // Logic to create the shared pipe (controller_bus)
+    }
+
+    // Create pipes for physical layer communication
+    if (config.contains("wiring")) {
+        for (const auto& [controller, pins] : config["wiring"].items()) {
+            for (const auto& [pin, details] : pins.items()) {
+                if (details.contains("pipe")) {
+                    std::cout << "[ConfigHelper] Initializing physical pipe: " << details["pipe"].get<std::string>() << std::endl;
+                    // Logic to create the physical pipe
+                }
+            }
+        }
+    }
+}
+
+void ConfigHelper::setupPinSimWiring(const nlohmann::json& wiringConfig, std::unordered_map<std::string, PinSim>& pinSims) {
+    for (const auto& [controller, pins] : wiringConfig.items()) {
+        for (const auto& [pin, details] : pins.items()) {
+            if (details.contains("signal")) {
+                std::string signal = details["signal"].get<std::string>();
+                std::cout << "[ConfigHelper] Setting up PinSim for signal: " << signal << " on pin: " << pin << std::endl;
+                pinSims[signal] = PinSim(pin);
+            }
+        }
+    }
+}
+
+void ConfigHelper::setupControllerBus(const nlohmann::json& config, BusClient& busClient) {
+    if (config.contains("shared_pipe")) {
+        std::string sharedPipe = config["shared_pipe"].get<std::string>();
+        std::cout << "[ConfigHelper] Setting up controller bus on shared pipe: " << sharedPipe << std::endl;
+        // Logic to initialize the BusClient with the shared pipe
     }
 }

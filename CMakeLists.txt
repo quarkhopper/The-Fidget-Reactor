@@ -17,22 +17,23 @@ include_directories(
 
 # --- Shared sources ---
 # --- Simplify reactor_ui sources ---
+# Add debug_console.cpp to reactor_ui sources
 set(REACTOR_UI_SOURCES
     main_window.cpp
     power_button.cpp
     pin_sim.cpp
-    controller_manager.cpp
     init_manager.cpp
     generated/reactor.pb.cc
     pipe_bus_client.cpp
+    debug_console.cpp
 )
 
 # --- Executables ---
 # --- Update reactor_ui executable ---
 add_executable(reactor_ui ${REACTOR_UI_SOURCES})
 add_executable(bus_router bus_router.cpp)
-add_executable(controller_runner
-    controller_runner.cpp
+add_executable(main_controller
+    main_controller.cpp
     pipe_bus_client.cpp
     init_manager.cpp
 )

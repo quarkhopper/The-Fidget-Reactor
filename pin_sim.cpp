@@ -1,11 +1,25 @@
 // pin_sim.cpp
 #include "pin_sim.hpp"
-#include "controller_manager.hpp"
 #include <iostream>
-#include "controller_manager.hpp"
-extern ControllerManager controller;
+#include <thread>
+#include <chrono>
 
-void emitPinState(const std::string& pinName, bool state) {
-    std::cout << "[sim] Pin " << pinName << " is now " << (state ? "HIGH" : "LOW") << std::endl;
-    controller.onPinChange(pinName, state);
+PinSim::PinSim(const std::string& pinName)
+    : pinName(pinName), currentState(false) {}
+
+void PinSim::simulateBouncySignal(int durationMs, int intervalMs) {
+    auto startTime = std::chrono::steady_clock::now();
+    while (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - startTime).count() < durationMs) {
+        toggleState();
+        std::this_thread::sleep_for(std::chrono::milliseconds(intervalMs));
+    }
+}
+
+void PinSim::toggleState() {
+    currentState = !currentState;
+    emitState();
+}
+
+void PinSim::emitState() {
+    std::cout << "[PinSim] Pin " << pinName << " is now " << (currentState ? "HIGH" : "LOW") << std::endl;
 }

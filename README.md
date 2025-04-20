@@ -62,7 +62,7 @@ To build the C++ backend:
 ```bash
 cd simulation/
 make
-./controller_runner
+./main_controller
 ```
 
 You’ll see the simulation tick through power states based on virtual button input.
@@ -138,7 +138,7 @@ In `tickEngine.cpp`:
 
 ```
 simulation/
-├── controller_runner.cpp
+├── main_controller.cpp
 ├── tickEngine.cpp/h
 ├── MessageBus.cpp/h
 └── subsystems/

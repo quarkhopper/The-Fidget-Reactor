@@ -7,10 +7,6 @@
 #include "power_button.hpp"
 #include "pin_sim.hpp"
 #include "debug_console.hpp"
-#include "controller_manager.hpp"
-
-// Declare controller manager and config
-ControllerManager controller;
 
 const int WINDOW_WIDTH = 1200;
 const int WINDOW_HEIGHT = 800;
@@ -98,8 +94,6 @@ int main(int argc, char* argv[]) {
                 masterButton.handleClick(mouseX, mouseY);
             }
         }
-
-        controller.tick(0);
 
         SDL_SetRenderDrawColor(renderer, 20, 20, 20, 255);
         SDL_RenderClear(renderer);

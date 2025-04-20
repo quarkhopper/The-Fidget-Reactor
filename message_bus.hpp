@@ -1,5 +1,4 @@
 #pragma once
-#include "controller_core.hpp"
 
 class MessageBus {
 public:

@@ -2,10 +2,6 @@
   "main_controller": {
     "chip": {
       "type": "esp32",
-      "cores": 2,
-      "frequency_mhz": 240,
-      "flash_kb": 8192,
-      "ram_kb": 520,
       "pins": ["GPIO10", "GPIO11", "GPIO12"]
     },
     "role": "main",
@@ -17,38 +13,26 @@
       "name": "phc_a",
       "chip": {
         "type": "attiny85",
-        "frequency_mhz": 8,
-        "flash_kb": 8,
-        "ram_bytes": 512,
         "pins": ["PB0", "PB1", "PB2", "PB3"]
       },
       "role": "peripheral",
-      "debounce_threshold": 4,
-      "pin_map": {
-        "PB0": "MASTER",
-        "PB1": "SCRAM"
-      }
+      "debounce_threshold": 4
     }
   ],
-  "bus": {
-    "routes": [
-      {
-        "signal": "MASTER_HIGH",
-        "from": "phc_a",
-        "to": ["main_controller"],
-        "event": "begin_startup"
-      }
-    ],
-    "default_encoding": "protobuf"
-  },
   "wiring": {
     "phc_a": {
-      "PB0": "MASTER",
-      "PB1": "SCRAM"
+      "PB0": { "signal": "MASTER", "pipe": "phc_a_pins" },
+      "PB1": { "signal": "SCRAM", "pipe": "phc_a_pins" }
     },
-    "main_controller": {
-      "PD0": "RX",
-      "PD1": "TX"
+    "debug_ui": {
+      "MASTER": { "target": "phc_a:PB0", "pipe": "phc_a_pins" },
+      "SCRAM": { "target": "phc_a:PB1", "pipe": "phc_a_pins" }
     }
-  }
+  },
+  "controller_pipes": [
+     "controller_bus"
+  ],
+  "phy_pipes": [
+    "phc_a_pins"
+  ]
 }
