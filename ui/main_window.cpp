@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include "power_button.hpp"
 #include "../bus/pin_sim.hpp" // Updated include path for pin_sim.hpp
-#include "../debug_console.hpp" // Updated include path for debug_console.hpp
+#include "debug_console.hpp" // Updated include path for debug_console.hpp
 
 const int WINDOW_WIDTH = 1200;
 const int WINDOW_HEIGHT = 800;

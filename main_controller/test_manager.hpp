@@ -6,8 +6,8 @@
 
 class TestManager {
 public:
-    TestManager(ControllerState& state, MessageBus& bus)
-        : state(state), bus(bus) {}
+    TestManager(ControllerState& state)
+        : state(state) {}
 
     void begin();
 
@@ -16,7 +16,6 @@ public:
 
 private:
     ControllerState& state;
-    MessageBus& bus;
     int pending_acks = 0;
 
     std::function<void()> on_complete;

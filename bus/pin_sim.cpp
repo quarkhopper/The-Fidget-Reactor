@@ -23,3 +23,7 @@ void PinSim::toggleState() {
 void PinSim::emitState() {
     std::cout << "[PinSim] Pin " << pinName << " is now " << (currentState ? "HIGH" : "LOW") << std::endl;
 }
+
+void emitPinState(const std::string& pinName, bool state) {
+    std::cout << "[PinSim] Emitting state for pin " << pinName << ": " << (state ? "HIGH" : "LOW") << std::endl;
+}

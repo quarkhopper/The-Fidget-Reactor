@@ -1,7 +1,7 @@
 // cool_system.hpp
 #pragma once
 
-#include "controller_core.hpp"
+#include "../controller_core.hpp"
 #include "subsystem.hpp"
 #include <iostream>
 

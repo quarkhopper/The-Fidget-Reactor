@@ -20,10 +20,6 @@
     }
   ],
   "wiring": {
-    "phc_a": {
-      "PB0": { "signal": "MASTER", "pipe": "phc_a_pins" },
-      "PB1": { "signal": "SCRAM", "pipe": "phc_a_pins" }
-    },
     "debug_ui": {
       "MASTER": { "target": "phc_a:PB0", "pipe": "phc_a_pins" },
       "SCRAM": { "target": "phc_a:PB1", "pipe": "phc_a_pins" }

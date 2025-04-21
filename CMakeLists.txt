@@ -32,32 +32,30 @@ add_custom_target(generate_proto ALL DEPENDS ${PROTO_SRCS} ${PROTO_HDRS})
 
 # Add generated files to the reactor_ui target
 set(REACTOR_UI_SOURCES
-    main_window.cpp
-    power_button.cpp
-    pin_sim.cpp
-    init_manager.cpp
+    ui/main_window.cpp
+    ui/power_button.cpp
+    ui/debug_console.cpp
+    bus/pin_sim.cpp
     ${PROTO_SRCS}
-    pipe_bus_client.cpp
-    debug_console.cpp
+    bus/pipe_bus_client.cpp
 )
 
 # --- Executables ---
 # --- Update reactor_ui executable ---
-add_executable(reactor_ui ${REACTOR_UI_SOURCES})
+add_executable(debug_ui ${REACTOR_UI_SOURCES})
 add_executable(main_controller
-    main_controller.cpp
-    pipe_bus_client.cpp
-    init_manager.cpp
+    main_controller/main_controller.cpp
+    bus/pipe_bus_client.cpp
 )
 # --- Remove unused files from phc ---
 add_executable(phc
-    phc.cpp
-    base_controller.cpp
-    config_helper.cpp
+    peripheral_controllers/phc.cpp
+    interfaces/base_controller.cpp
+    config/config_helper.cpp
 )
 
 # --- Link libraries ---
-target_link_libraries(reactor_ui
+target_link_libraries(debug_ui
     PRIVATE
         protobuf::libprotobuf
         nlohmann_json::nlohmann_json

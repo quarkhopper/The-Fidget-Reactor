@@ -5,7 +5,7 @@
 #include <string>
 #include <cstdint>
 #include <optional>
-#include "message_types.hpp"
+#include "../bus/message_types.hpp"
 
 // Central controller state for each tick
 struct ControllerState {

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <stdexcept>
 #include "nlohmann/json.hpp"
+#include "../bus/pin_sim.hpp" // Updated include path for pin_sim.hpp
 #include "../bus/pipe_bus_client.hpp" // Updated to use PipeBusClient instead of BusClient
 
 nlohmann::json ConfigHelper::loadControllerConfig(const std::string& controllerName, const std::string& configFilePath) {
@@ -65,13 +66,11 @@ void ConfigHelper::initializePipes(const nlohmann::json& config) {
 }
 
 void ConfigHelper::setupPinSimWiring(const nlohmann::json& wiringConfig, std::unordered_map<std::string, PinSim>& pinSims) {
-    for (const auto& [controller, pins] : wiringConfig.items()) {
-        for (const auto& [pin, details] : pins.items()) {
-            if (details.contains("signal")) {
-                std::string signal = details["signal"].get<std::string>();
-                std::cout << "[ConfigHelper] Setting up PinSim for signal: " << signal << " on pin: " << pin << std::endl;
-                pinSims[signal] = PinSim(pin);
-            }
+    for (const auto& [signal, details] : wiringConfig.items()) {
+        if (details.contains("target")) {
+            std::string target = details["target"].get<std::string>();
+            std::cout << "[ConfigHelper] Setting up PinSim for signal: " << signal << " targeting: " << target << std::endl;
+            pinSims.emplace(signal, PinSim(target)); // Use the target as the pin name
         }
     }
 }

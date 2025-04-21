@@ -4,15 +4,14 @@
 #include <iostream>
 #include <vector>
 #include "controller_core.hpp"
-#include "message_bus.hpp"
-#include "subsystem.hpp"
+#include "subsystems/subsystem.hpp"
 
 namespace tickEngine {
 
     class TickEngine {
     public:
-        TickEngine(ControllerState& state, MessageBus& bus)
-            : state(state), bus(bus) {}
+        TickEngine(ControllerState& state)
+            : state(state) {}
 
         void register_subsystem(Subsystem* subsystem) {
             subsystems.push_back(subsystem);
@@ -30,13 +29,10 @@ namespace tickEngine {
             for (Subsystem* s : subsystems) {
                 s->on_tick();
             }
-
-            bus.clear();
         }
 
     private:
         ControllerState& state;
-        MessageBus& bus;
         std::vector<Subsystem*> subsystems;
     };
 

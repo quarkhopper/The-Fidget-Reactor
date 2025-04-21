@@ -5,16 +5,8 @@
 
 class PowerStateMachine {
 public:
-    PowerStateMachine(ControllerState& state, MessageBus& bus)
-        : state(state), bus(bus) {}
-
-    void handleInput() {
-        for (const auto& msg : bus.getInbound()) {
-             if (msg.type == MessageType::BUTTON_PRESS && msg.sourceId == POWER_BUTTON_ID) {
-                handlePowerButton();
-            }
-        }
-    }
+    PowerStateMachine(ControllerState& state)
+        : state(state) {}
 
     void tickAdvance() {
         switch (state.phase) {

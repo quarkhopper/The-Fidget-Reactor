@@ -1,7 +1,7 @@
 #include <iostream>
-#include "pipe_bus_client.hpp" // Corrected include path
 #include <stdexcept>
 #include <windows.h> // For named pipe operations
+#include "pipe_bus_client.hpp" // Corrected include path
 #include "message_types.hpp" // Corrected include path
 
 std::mutex PipeBusClient::busMutex;

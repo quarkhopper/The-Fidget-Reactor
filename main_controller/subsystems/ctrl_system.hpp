@@ -2,7 +2,7 @@
 #pragma once
 
 #include <iostream>
-#include "controller_core.hpp"
+#include "../controller_core.hpp"
 #include "subsystem.hpp"
 
 class CtrlSystem : public Subsystem {

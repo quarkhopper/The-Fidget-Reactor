@@ -3,8 +3,8 @@
 #include <vector>
 #include <unordered_map>
 #include <nlohmann/json.hpp>
-#include "pin_sim.hpp"
-#include "pipe_bus_client.hpp" // Updated to use PipeBusClient instead of BusClient
+#include "../bus/pin_sim.hpp"
+#include "../bus/pipe_bus_client.hpp" 
 
 class ConfigHelper {
 public:

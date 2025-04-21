@@ -6,8 +6,8 @@
 
 class ShutdownManager {
 public:
-    ShutdownManager(ControllerState& state, MessageBus& bus)
-        : state(state), bus(bus) {}
+    ShutdownManager(ControllerState& state)
+        : state(state) {}
 
     void begin();
     void handle_message(const Message& msg);
@@ -17,7 +17,6 @@ public:
 
 private:
     ControllerState& state;
-    MessageBus& bus;
     int pending_acks = 0;
 
     std::function<void()> on_complete;

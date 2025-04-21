@@ -18,8 +18,7 @@ int main() {
     ControllerState state;
     auto bus_client = std::make_shared<PipeBusClient>("init"); 
     InitManager testInit(state);
-    MessageBus bus;
-    tickEngine::TickEngine engine(state, bus);
+    tickEngine::TickEngine engine(state);
 
     CoreSystem core(state);
     CtrlSystem ctrl(state);
@@ -32,14 +31,6 @@ int main() {
     engine.register_subsystem(&xfer);
 
     engine.initialize_all();
-
-    while (tickCount < 10) {
-        std::cout << "Tick " << tickCount << std::endl;
-        simulateButtonPress(tickCount);
-        engine.tick();
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-        tickCount++;
-    }
 
     std::cout << "Simulation complete.\n";
     return 0;
