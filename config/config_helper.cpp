@@ -1,9 +1,9 @@
-#include "config_helper.hpp"
+#include "config_helper.hpp" // Corrected include path
 #include <fstream>
 #include <iostream>
 #include <stdexcept>
 #include "nlohmann/json.hpp"
-#include "pipe_bus_client.hpp" // Updated to use PipeBusClient instead of BusClient
+#include "../bus/pipe_bus_client.hpp" // Updated to use PipeBusClient instead of BusClient
 
 nlohmann::json ConfigHelper::loadControllerConfig(const std::string& controllerName, const std::string& configFilePath) {
     std::ifstream configFile(configFilePath);

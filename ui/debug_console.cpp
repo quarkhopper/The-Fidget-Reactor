@@ -1,5 +1,5 @@
 // debug_console.cpp
-#include "debug_console.hpp"
+#include "debug_console.hpp" // Updated include path for debug_console.hpp
 #include <deque>
 #include <string>
 #include <unordered_set>

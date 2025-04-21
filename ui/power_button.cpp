@@ -1,6 +1,6 @@
 // power_button.cpp
 #include "power_button.hpp"
-#include "pin_sim.hpp"
+#include "../bus/pin_sim.hpp" // Updated include path for pin_sim.hpp
 #include <SDL2/SDL.h>
 
 PowerButton::PowerButton(int x, int y, int w, int h)

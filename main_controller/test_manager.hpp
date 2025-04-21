@@ -1,17 +1,15 @@
-// shutdown_manager.hpp
+// test_manager.hpp
 #pragma once
 
 #include <functional>
 #include "controller_core.hpp"
-#include "message_bus.hpp"
 
-class ShutdownManager {
+class TestManager {
 public:
-    ShutdownManager(ControllerState& state, MessageBus& bus)
+    TestManager(ControllerState& state, MessageBus& bus)
         : state(state), bus(bus) {}
 
     void begin();
-    void handle_message(const Message& msg);
 
     void set_on_complete(std::function<void()> cb) { on_complete = cb; }
     void set_on_fault(std::function<void()> cb) { on_fault = cb; }

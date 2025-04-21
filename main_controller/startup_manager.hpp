@@ -3,7 +3,6 @@
 
 #include <functional>
 #include "controller_core.hpp"
-#include "message_bus.hpp"
 
 class StartupManager {
 public:

@@ -1,8 +1,8 @@
 #include <iostream>
-#include "pipe_bus_client.hpp"
+#include "pipe_bus_client.hpp" // Corrected include path
 #include <stdexcept>
 #include <windows.h> // For named pipe operations
-#include "message_types.hpp" // Updated to use the new Message structure
+#include "message_types.hpp" // Corrected include path
 
 std::mutex PipeBusClient::busMutex;
 

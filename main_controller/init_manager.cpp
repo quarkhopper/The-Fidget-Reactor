@@ -7,4 +7,3 @@ void InitManager::begin() {
     // Add your initialization logic here
 }
 
-InitManager::InitManager(ControllerState& state) : state(state) {}

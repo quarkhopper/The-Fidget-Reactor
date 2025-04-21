@@ -4,11 +4,11 @@
 #include <memory>
 #include "tick_engine.hpp"
 #include "init_manager.hpp"
-#include "core_system.hpp"
-#include "ctrl_system.hpp"
-#include "gen_system.hpp"
-#include "xfer_system.hpp"
-#include "pipe_bus_client.hpp"
+#include "subsystems/core_system.hpp"
+#include "subsystems/ctrl_system.hpp"
+#include "subsystems/gen_system.hpp"
+#include "subsystems/xfer_system.hpp"
+#include "../bus/pipe_bus_client.hpp"
 
 
 int main() {
@@ -17,7 +17,7 @@ int main() {
 
     ControllerState state;
     auto bus_client = std::make_shared<PipeBusClient>("init"); 
-    InitManager testInit(state, bus_client);
+    InitManager testInit(state);
     MessageBus bus;
     tickEngine::TickEngine engine(state, bus);
 
@@ -32,17 +32,6 @@ int main() {
     engine.register_subsystem(&xfer);
 
     engine.initialize_all();
-
-    auto simulateButtonPress = [&](int tick) {
-        if (tick == 0 || tick == 5) {
-            bus.pushInbound({
-                .type = MessageType::BUTTON_PRESS,
-                .sourceId = 0,
-                .intValue = std::nullopt,
-                .strValue = std::nullopt
-            });
-        }
-    };
 
     while (tickCount < 10) {
         std::cout << "Tick " << tickCount << std::endl;

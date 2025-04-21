@@ -1,4 +1,7 @@
 #pragma once
+#include <vector>
+#include "message_types.hpp"
+
 
 class MessageBus {
 public:

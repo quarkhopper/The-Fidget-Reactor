@@ -7,8 +7,8 @@
 #include <chrono>      // for std::chrono::milliseconds
 #include <fstream>     // for std::ifstream
 #include "nlohmann/json.hpp" // for JSON parsing
-#include "base_controller.hpp"
-#include "config_helper.hpp"
+#include "../interfaces/base_controller.hpp"
+#include "../config/config_helper.hpp"
 
 using json = nlohmann::json;
 
