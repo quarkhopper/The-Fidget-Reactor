@@ -42,6 +42,14 @@ bool launchProcess(const char* path) {
     return success;
 }
 
+// Ensure clean exit on errors
+void cleanExit(SDL_Window* window, SDL_Renderer* renderer) {
+    if (renderer) SDL_DestroyRenderer(renderer);
+    if (window) SDL_DestroyWindow(window);
+    DebugConsole::shutdown();
+    SDL_Quit();
+}
+
 int main(int argc, char* argv[]) {
     // Initialize SDL
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
@@ -61,7 +69,7 @@ int main(int argc, char* argv[]) {
         std::ifstream configFile("simulation_config.json");
         if (!configFile.is_open()) {
             std::cerr << "Failed to open simulation_config.json" << std::endl;
-            SDL_Quit();
+            cleanExit(nullptr, nullptr);
             return 1;
         }
         configFile >> config;
@@ -81,7 +89,7 @@ int main(int argc, char* argv[]) {
         }
     } catch (const std::exception& e) {
         std::cerr << "Failed to set up configuration: " << e.what() << std::endl;
-        SDL_Quit();
+        cleanExit(nullptr, nullptr);
         return 1;
     }
 
@@ -97,15 +105,14 @@ int main(int argc, char* argv[]) {
                                           SDL_WINDOW_SHOWN);
     if (!window) {
         std::cerr << "SDL Create Window Error: " << SDL_GetError() << std::endl;
-        SDL_Quit();
+        cleanExit(nullptr, nullptr);
         return 1;
     }
 
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     if (!renderer) {
         std::cerr << "SDL Create Renderer Error: " << SDL_GetError() << std::endl;
-        SDL_DestroyWindow(window);
-        SDL_Quit();
+        cleanExit(window, nullptr);
         return 1;
     }
 
@@ -121,6 +128,14 @@ int main(int argc, char* argv[]) {
                 int mouseX = event.button.x;
                 int mouseY = event.button.y;
                 masterButton.handleClick(mouseX, mouseY);
+            }
+            else if (event.type == SDL_MOUSEWHEEL) {
+                // Get the mouse position for determining which panel was scrolled
+                int mouseX, mouseY;
+                SDL_GetMouseState(&mouseX, &mouseY);
+                
+                // Pass the mouse wheel event to the debug console
+                DebugConsole::handleMouseWheel(mouseX, mouseY, event.wheel.y);
             }
         }
 
@@ -156,9 +171,6 @@ int main(int argc, char* argv[]) {
         SDL_Delay(16); // ~60 FPS
     }
 
-    DebugConsole::shutdown();
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
-    SDL_Quit();
+    cleanExit(window, renderer);
     return 0;
 }
