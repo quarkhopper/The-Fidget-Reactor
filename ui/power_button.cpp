@@ -13,7 +13,8 @@ void PowerButton::handleClick(int mouseX, int mouseY) {
         // Simulate debounce: ignore clicks within 200 ms
         if (now - lastClickTime > 200) {
             isOn = !isOn;
-            emitPinState("MASTER", isOn);
+            // Use the pipe name from configuration
+            emitPinState("MASTER", "phc_a_pins", isOn);
             lastClickTime = now;
         }
     }

@@ -3,10 +3,12 @@
 #include <windows.h>
 #include <SDL2/SDL.h>
 #include <iostream>
+#include <fstream>  // Added for std::ifstream
 #include <cstdlib>
 #include "power_button.hpp"
 #include "../bus/pin_sim.hpp" // Updated include path for pin_sim.hpp
 #include "debug_console.hpp" // Updated include path for debug_console.hpp
+#include "../config/config_helper.hpp" // Include ConfigHelper for configuration handling
 
 const int WINDOW_WIDTH = 1200;
 const int WINDOW_HEIGHT = 800;
@@ -41,23 +43,50 @@ bool launchProcess(const char* path) {
 }
 
 int main(int argc, char* argv[]) {
+    // Initialize SDL
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         std::cerr << "SDL Init Error: " << SDL_GetError() << std::endl;
         return 1;
     }
 
-    // Initialize debug console and redirect std::cout
+    // Initialize debug console and redirect std::cout FIRST
     DebugCoutRedirect redirect;
     DebugConsole::init("C:/Windows/Fonts/consola.ttf", 14);
     DebugConsole::setActiveMMTag("BOOT");
 
-    // Boot messages
-    std::cout << "[BOOT] Fidget Reactor UI initializing..." << std::endl;
-    std::cout << "[BOOT] Launching ESP32 simulation..." << std::endl;
-    launchProcess("build\\Debug\\controller_runner.exe");
+    // Now initialize pipes from configuration file - AFTER the redirect is set up
+    nlohmann::json config;
+    try {
+        std::cout << "[Main] Loading configuration file..." << std::endl;
+        std::ifstream configFile("simulation_config.json");
+        if (!configFile.is_open()) {
+            std::cerr << "Failed to open simulation_config.json" << std::endl;
+            SDL_Quit();
+            return 1;
+        }
+        configFile >> config;
+        
+        // Initialize all named pipes from controller_pipes and phy_pipes sections
+        std::cout << "[Main] Initializing named pipes..." << std::endl;
+        ConfigHelper::initializePipes(config);
+        
+        // Set up PinSim instances for the debug UI
+        if (config.contains("wiring") && config["wiring"].contains("debug_ui")) {
+            std::cout << "[Main] Setting up PinSim wiring for debug UI..." << std::endl;
+            std::unordered_map<std::string, PinSim> pinSims;
+            ConfigHelper::setupPinSimWiring(config["wiring"]["debug_ui"], pinSims);
+            
+            // Store the PinSim instances for use in the UI
+            // For example, associate them with UI buttons
+        }
+    } catch (const std::exception& e) {
+        std::cerr << "Failed to set up configuration: " << e.what() << std::endl;
+        SDL_Quit();
+        return 1;
+    }
 
-    std::cout << "[BOOT] Launching PHC controller: phc_a..." << std::endl;
-    launchProcess("build\\Debug\\phc.exe config\\components\\phc_a.json");
+    // Boot messages
+    std::cout << "[BOOT] Bootup succeeded" << std::endl;
 
     // Load UI window
     SDL_Window* window = SDL_CreateWindow("Fidget Reactor UI",

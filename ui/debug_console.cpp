@@ -29,21 +29,20 @@ void DebugConsole::setActiveMMTag(const std::string& tag) {
 }
 
 void DebugConsole::log(const std::string& message) {
-    // Main console: only untagged messages
-    if (message.rfind("[", 0) != 0) {
-        logBuffer.push_back(message);
-        if (logBuffer.size() > maxLines) logBuffer.pop_front();
-        return;
-    }
-
-    // Try to parse tag
-    size_t tagEnd = message.find("]");
-    if (tagEnd != std::string::npos) {
-        std::string tag = message.substr(1, tagEnd - 1);
-        knownTags.insert(tag);
-        if (tag == activeMMTag) {
-            mmBuffer.push_back(message);
-            if (mmBuffer.size() > maxLines) mmBuffer.pop_front();
+    // Always add message to main console (logBuffer)
+    logBuffer.push_back(message);
+    if (logBuffer.size() > maxLines) logBuffer.pop_front();
+    
+    // For tagged messages, also add to MM if the tag matches activeMMTag
+    if (message.rfind("[", 0) == 0) {
+        size_t tagEnd = message.find("]");
+        if (tagEnd != std::string::npos) {
+            std::string tag = message.substr(1, tagEnd - 1);
+            knownTags.insert(tag);
+            if (tag == activeMMTag) {
+                mmBuffer.push_back(message);
+                if (mmBuffer.size() > maxLines) mmBuffer.pop_front();
+            }
         }
     }
 }

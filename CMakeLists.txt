@@ -17,6 +17,7 @@ add_executable(debug_ui
     ui/main_window.cpp
     ui/power_button.cpp
     bus/pin_sim.cpp
+    config/config_helper.cpp
 )
 
 # --- Link Libraries ---
@@ -27,4 +28,12 @@ target_link_libraries(debug_ui
         $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
         $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
         $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2_ttf>,SDL2_ttf::SDL2_ttf,SDL2_ttf::SDL2_ttf-static>
+)
+
+# Copy the configuration file to the executable directory
+add_custom_command(
+    TARGET debug_ui POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${CMAKE_SOURCE_DIR}/config/simulation_config.json
+        $<TARGET_FILE_DIR:debug_ui>
 )
