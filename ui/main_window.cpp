@@ -10,6 +10,15 @@
 #include "debug_console.hpp" // Updated include path for debug_console.hpp
 #include "../config/config_helper.hpp" // Include ConfigHelper for configuration handling
 
+// Add a logging helper with absolute path for debugging
+std::ofstream debugLogFile("C:/Users/quark/OneDrive/Documents/GitHub/The-Fidget-Reactor/debug_log.txt", std::ios::out | std::ios::trunc);
+void logToFile(const std::string& message) {
+    if (debugLogFile.is_open()) {
+        debugLogFile << message << std::endl;
+        debugLogFile.flush();
+    }
+}
+
 const int WINDOW_WIDTH = 1200;
 const int WINDOW_HEIGHT = 800;
 
@@ -51,36 +60,50 @@ void cleanExit(SDL_Window* window, SDL_Renderer* renderer) {
 }
 
 int main(int argc, char* argv[]) {
+    // Log immediately at program start
+    logToFile("Program started");
+    
     // Initialize SDL
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         std::cerr << "SDL Init Error: " << SDL_GetError() << std::endl;
+        logToFile("SDL Init Error: " + std::string(SDL_GetError()));
         return 1;
     }
 
-    // Initialize debug console and redirect std::cout FIRST
-    DebugCoutRedirect redirect;
-    DebugConsole::init("C:/Windows/Fonts/consola.ttf", 14);
-    DebugConsole::setActiveMMTag("BOOT");
-
+    // TEMPORARY DEBUGGING: Disable debug console redirection
+    std::cout << "Starting program - debug console redirection disabled for debugging" << std::endl;
+    
+    // Instead of using the debug console, we'll initialize SDL_ttf directly
+    if (TTF_Init() != 0) {
+        std::cerr << "TTF_Init Error: " << TTF_GetError() << std::endl;
+        SDL_Quit();
+        return 1;
+    }
+    
     // Now initialize pipes from configuration file - AFTER the redirect is set up
     nlohmann::json config;
     try {
         std::cout << "[Main] Loading configuration file..." << std::endl;
+        logToFile("[Main] Loading configuration file...");
         std::ifstream configFile("simulation_config.json");
         if (!configFile.is_open()) {
             std::cerr << "Failed to open simulation_config.json" << std::endl;
-            cleanExit(nullptr, nullptr);
+            logToFile("Failed to open simulation_config.json");
+            TTF_Quit();
+            SDL_Quit();
             return 1;
         }
         configFile >> config;
         
         // Initialize all named pipes from controller_pipes and phy_pipes sections
         std::cout << "[Main] Initializing named pipes..." << std::endl;
+        logToFile("[Main] Initializing named pipes...");
         ConfigHelper::initializePipes(config);
         
         // Set up PinSim instances for the debug UI
         if (config.contains("wiring") && config["wiring"].contains("debug_ui")) {
             std::cout << "[Main] Setting up PinSim wiring for debug UI..." << std::endl;
+            logToFile("[Main] Setting up PinSim wiring for debug UI...");
             std::unordered_map<std::string, PinSim> pinSims;
             ConfigHelper::setupPinSimWiring(config["wiring"]["debug_ui"], pinSims);
             
@@ -89,12 +112,15 @@ int main(int argc, char* argv[]) {
         }
     } catch (const std::exception& e) {
         std::cerr << "Failed to set up configuration: " << e.what() << std::endl;
-        cleanExit(nullptr, nullptr);
+        logToFile("Failed to set up configuration: " + std::string(e.what()));
+        TTF_Quit();
+        SDL_Quit();
         return 1;
     }
 
     // Boot messages
     std::cout << "[BOOT] Bootup succeeded" << std::endl;
+    logToFile("[BOOT] Bootup succeeded");
 
     // Load UI window
     SDL_Window* window = SDL_CreateWindow("Fidget Reactor UI",
@@ -105,21 +131,31 @@ int main(int argc, char* argv[]) {
                                           SDL_WINDOW_SHOWN);
     if (!window) {
         std::cerr << "SDL Create Window Error: " << SDL_GetError() << std::endl;
-        cleanExit(nullptr, nullptr);
+        logToFile("SDL Create Window Error: " + std::string(SDL_GetError()));
+        TTF_Quit();
+        SDL_Quit();
         return 1;
     }
+    std::cout << "Window created successfully" << std::endl;
 
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     if (!renderer) {
         std::cerr << "SDL Create Renderer Error: " << SDL_GetError() << std::endl;
-        cleanExit(window, nullptr);
+        logToFile("SDL Create Renderer Error: " + std::string(SDL_GetError()));
+        SDL_DestroyWindow(window);
+        TTF_Quit();
+        SDL_Quit();
         return 1;
     }
+    std::cout << "Renderer created successfully" << std::endl;
 
     PowerButton masterButton(350, 50, 40, 40); // MASTER in main panel
 
     bool running = true;
     SDL_Event event;
+    
+    std::cout << "Entering main loop" << std::endl;
+    
     while (running) {
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {

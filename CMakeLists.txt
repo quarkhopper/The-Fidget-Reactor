@@ -5,6 +5,14 @@ project(FidgetReactor)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Ensure proper handling of library paths
+if(MSVC)
+    # Use MSVC-compatible paths and libraries
+    set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "C:/vcpkg/installed/x64-windows")
+    set(SDL2_DIR "C:/vcpkg/installed/x64-windows/share/sdl2")
+    set(SDL2_ttf_DIR "C:/vcpkg/installed/x64-windows/share/sdl2-ttf")
+endif()
+
 # --- Dependencies ---
 find_package(SDL2 CONFIG REQUIRED)
 find_package(SDL2_ttf CONFIG REQUIRED)

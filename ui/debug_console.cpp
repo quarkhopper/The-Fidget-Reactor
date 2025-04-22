@@ -382,9 +382,18 @@ static int mmScrollOffset = 0;
 static const int lineHeight = 18; // Height of each line for scrolling calculations
 
 bool init(const std::string& fontPath, int fontSize) {
-    if (TTF_Init() != 0) return false;
+    if (TTF_Init() != 0) {
+        std::cerr << "TTF_Init failed: " << TTF_GetError() << std::endl;
+        return false;
+    }
+    
     font = TTF_OpenFont(fontPath.c_str(), fontSize);
-    return font != nullptr;
+    if (!font) {
+        std::cerr << "Failed to load font " << fontPath << ": " << TTF_GetError() << std::endl;
+        return false;
+    }
+    
+    return true;
 }
 
 void shutdown() {
@@ -415,7 +424,9 @@ void log(const std::string& message, bool isError) {
 }
 
 void render(SDL_Renderer* renderer, int x, int y) {
+    // Skip rendering if font isn't initialized (when debug console is disabled)
     if (!font) return;
+    
     // Use the main console container
     SDL_Color defaultTextColor;
     defaultTextColor.r = 255;
@@ -426,7 +437,9 @@ void render(SDL_Renderer* renderer, int x, int y) {
 }
 
 void renderMM(SDL_Renderer* renderer, int x, int y) {
+    // Skip rendering if font isn't initialized (when debug console is disabled)
     if (!font) return;
+    
     // Use the MM console container
     SDL_Color defaultTextColor;
     defaultTextColor.r = 200;
