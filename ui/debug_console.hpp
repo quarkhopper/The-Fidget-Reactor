@@ -8,12 +8,18 @@
 #include <vector>
 #include <deque>
 
+// Include Windows headers for clipboard functionality
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 // Forward declarations
 struct LogMessage;
 
 namespace DebugConsole {
     // Forward declarations
     class TextContainer;
+    class ConsoleButton;
     
     bool init(const std::string& fontPath, int fontSize);
     void shutdown();
@@ -22,11 +28,11 @@ namespace DebugConsole {
     void renderMM(SDL_Renderer* renderer, int x, int y);
     void setActiveMMTag(const std::string& tag);
     
-    // New function to handle mouse wheel events for scrolling
+    // Mouse event handlers
     void handleMouseWheel(int x, int y, int wheelY);
-    
-    // Fixed signature to match implementation
-    std::vector<std::string> wrapText(const std::string& text, TTF_Font* font, int maxWidth);
+    bool handleMouseMove(int x, int y);
+    bool handleMouseDown(int x, int y);
+    bool handleMouseUp(int x, int y);
     
     // Add function to support dynamic resizing of console panels
     void resizeConsoles(int mainX, int mainY, int mainWidth, int mainHeight,
