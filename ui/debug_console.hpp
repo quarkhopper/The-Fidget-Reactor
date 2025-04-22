@@ -6,8 +6,15 @@
 #include <iostream>
 #include <sstream>  // Added for std::ostringstream
 #include <vector>
+#include <deque>
+
+// Forward declarations
+struct LogMessage;
 
 namespace DebugConsole {
+    // Forward declarations
+    class TextContainer;
+    
     bool init(const std::string& fontPath, int fontSize);
     void shutdown();
     void log(const std::string& message, bool isError = false);
@@ -20,6 +27,10 @@ namespace DebugConsole {
     
     // Fixed signature to match implementation
     std::vector<std::string> wrapText(const std::string& text, TTF_Font* font, int maxWidth);
+    
+    // Add function to support dynamic resizing of console panels
+    void resizeConsoles(int mainX, int mainY, int mainWidth, int mainHeight,
+                        int mmX, int mmY, int mmWidth, int mmHeight);
 }
 
 // Redirect both std::cout and std::cerr to DebugConsole
