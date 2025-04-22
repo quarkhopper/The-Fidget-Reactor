@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{2CE6A390-68A2-30E1-A911-B65E013316DA}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>debug_ui</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <!-- Output directories -->
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <!-- Debug configuration -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <!-- Release configuration -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <!-- Compiler settings for Debug -->
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;PROTOBUF_USE_DLLS;ABSL_CONSUME_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\vcpkg\installed\x64-windows\include;C:\vcpkg\installed\x64-windows\include\SDL2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>C:\vcpkg\installed\x64-windows\debug\lib\libprotobufd.lib;C:\vcpkg\installed\x64-windows\debug\lib\manual-link\SDL2maind.lib;C:\vcpkg\installed\x64-windows\debug\lib\SDL2_ttfd.lib;C:\vcpkg\installed\x64-windows\debug\lib\SDL2d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+        if exist "$(ProjectDir)config\simulation_config.json" copy /Y "$(ProjectDir)config\simulation_config.json" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\SDL2.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\SDL2.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\SDL2_ttf.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\SDL2_ttf.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\libprotobuf.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\libprotobuf.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\zlib1.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\zlib1.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\brotlicommon.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlicommon.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\brotlidec.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlidec.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\bz2.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\bz2.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\freetype.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\freetype.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\libpng16.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\libpng16.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\brotlienc.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlienc.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\harfbuzz.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\harfbuzz.dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <!-- Compiler settings for Release -->
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;PROTOBUF_USE_DLLS;ABSL_CONSUME_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\vcpkg\installed\x64-windows\include;C:\vcpkg\installed\x64-windows\include\SDL2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>C:\vcpkg\installed\x64-windows\lib\libprotobuf.lib;C:\vcpkg\installed\x64-windows\lib\manual-link\SDL2main.lib;C:\vcpkg\installed\x64-windows\lib\SDL2_ttf.lib;C:\vcpkg\installed\x64-windows\lib\SDL2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+        if exist "$(ProjectDir)config\simulation_config.json" copy /Y "$(ProjectDir)config\simulation_config.json" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\SDL2.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\SDL2.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\SDL2_ttf.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\SDL2_ttf.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\libprotobuf.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\libprotobuf.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\zlib1.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\zlib1.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\brotlicommon.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlicommon.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\brotlidec.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlidec.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\bz2.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\bz2.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\freetype.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\freetype.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\libpng16.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\libpng16.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\brotlienc.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlienc.dll" "$(OutDir)"
+        if exist "C:\vcpkg\installed\x64-windows\bin\harfbuzz.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\harfbuzz.dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <!-- Source files -->
+  <ItemGroup>
+    <ClCompile Include="ui\debug_console.cpp" />
+    <ClCompile Include="ui\main_window.cpp" />
+    <ClCompile Include="ui\power_button.cpp" />
+    <ClCompile Include="bus\pin_sim.cpp" />
+    <ClCompile Include="config\config_helper.cpp" />
+  </ItemGroup>
+  <!-- Header files -->
+  <ItemGroup>
+    <ClInclude Include="ui\debug_console.hpp" />
+    <ClInclude Include="ui\power_button.hpp" />
+    <ClInclude Include="bus\pin_sim.hpp" />
+    <ClInclude Include="bus\pipe_bus_client.hpp" />
+    <ClInclude Include="config\config_helper.hpp" />
+  </ItemGroup>
+  <!-- Other files -->
+  <ItemGroup>
+    <None Include="config\simulation_config.json" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

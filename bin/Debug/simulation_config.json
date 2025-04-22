@@ -1,0 +1,34 @@
+{
+  "main_controller": {
+    "chip": {
+      "type": "esp32",
+      "pins": ["GPIO10", "GPIO11", "GPIO12"]
+    },
+    "role": "main",
+    "startup_delay_ms": 100,
+    "listen_for": ["MASTER", "SCRAM"]
+  },
+  "peripheral_controllers": [
+    {
+      "name": "phc_a",
+      "chip": {
+        "type": "attiny85",
+        "pins": ["PB0", "PB1", "PB2", "PB3"]
+      },
+      "role": "peripheral",
+      "debounce_threshold": 4
+    }
+  ],
+  "wiring": {
+    "debug_ui": {
+      "MASTER": { "target": "phc_a:PB0", "pipe": "phc_a_pins" },
+      "SCRAM": { "target": "phc_a:PB1", "pipe": "phc_a_pins" }
+    }
+  },
+  "controller_pipes": [
+     "controller_bus"
+  ],
+  "phy_pipes": [
+    "phc_a_pins"
+  ]
+}

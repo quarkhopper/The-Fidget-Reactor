@@ -8,12 +8,13 @@
             "name": "Debug UI",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/Debug/debug_ui.exe",
+            "program": "${workspaceFolder}/bin/Debug/debug_ui.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/build/Debug",
+            "cwd": "${workspaceFolder}/bin/Debug",
             "environment": [],
-            "console": "externalTerminal"
+            "console": "externalTerminal",
+            "preLaunchTask": "build"
         }
     ]
 }

@@ -72,5 +72,13 @@
         "semaphore": "cpp",
         "stop_token": "cpp",
         "thread": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": false,
+    "code-runner.runInTerminal": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.ignoreSelection": true,
+    "code-runner.executorMap": {
+        "cpp": "cd $workspaceRoot && MSBuild $workspaceRoot/FidgetReactor.sln /property:Configuration=Debug /property:Platform=x64 /verbosity:minimal && $workspaceRoot/build/Debug/debug_ui.exe"
+    },
+    "code-runner.enableAppInsights": false
 }

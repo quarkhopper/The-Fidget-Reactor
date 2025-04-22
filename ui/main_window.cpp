@@ -19,6 +19,8 @@ void logToFile(const std::string& message) {
     }
 }
 
+
+// BREAKPOINT #1: You can set a breakpoint here at program start
 const int WINDOW_WIDTH = 1200;
 const int WINDOW_HEIGHT = 800;
 
@@ -60,6 +62,9 @@ void cleanExit(SDL_Window* window, SDL_Renderer* renderer) {
 }
 
 int main(int argc, char* argv[]) {
+    // BREAKPOINT #2: This is an ideal place for a breakpoint
+    std::cout << "DEBUG: Program starting - breakpoint opportunity" << std::endl;
+    
     // Log immediately at program start
     logToFile("Program started");
     
@@ -69,31 +74,52 @@ int main(int argc, char* argv[]) {
         logToFile("SDL Init Error: " + std::string(SDL_GetError()));
         return 1;
     }
+    std::cout << "DEBUG: SDL initialized successfully" << std::endl;
 
     // TEMPORARY DEBUGGING: Disable debug console redirection
     std::cout << "Starting program - debug console redirection disabled for debugging" << std::endl;
     
-    // Instead of using the debug console, we'll initialize SDL_ttf directly
-    if (TTF_Init() != 0) {
-        std::cerr << "TTF_Init Error: " << TTF_GetError() << std::endl;
-        SDL_Quit();
-        return 1;
+    // Initialize debug console and redirect std::cout FIRST
+    DebugCoutRedirect redirect;
+    bool debugConsoleInitialized = false;
+    try {
+        // BREAKPOINT #3: Set a breakpoint before debug console initialization
+        std::cout << "DEBUG: About to initialize debug console" << std::endl;
+        debugConsoleInitialized = DebugConsole::init("C:/Windows/Fonts/consola.ttf", 14);
+        if (!debugConsoleInitialized) {
+            std::cerr << "Warning: Failed to initialize debug console - font loading error" << std::endl;
+            std::cerr << "Continuing without debug console..." << std::endl;
+            logToFile("Warning: Failed to initialize debug console - font loading error");
+            logToFile("Continuing without debug console...");
+            // Continue execution even if debug console fails
+        } else {
+            std::cout << "DEBUG: Debug console initialized successfully" << std::endl;
+            DebugConsole::setActiveMMTag("BOOT");
+        }
+    } catch (const std::exception& e) {
+        std::cerr << "ERROR: Exception during debug console initialization: " << e.what() << std::endl;
+        logToFile("ERROR: Exception during debug console initialization: " + std::string(e.what()));
+        // Continue without debug console
     }
     
     // Now initialize pipes from configuration file - AFTER the redirect is set up
     nlohmann::json config;
     try {
-        std::cout << "[Main] Loading configuration file..." << std::endl;
+        // BREAKPOINT #4: Set a breakpoint before config loading
+        std::cout << "DEBUG: About to load configuration file" << std::endl;
         logToFile("[Main] Loading configuration file...");
         std::ifstream configFile("simulation_config.json");
         if (!configFile.is_open()) {
             std::cerr << "Failed to open simulation_config.json" << std::endl;
             logToFile("Failed to open simulation_config.json");
-            TTF_Quit();
+            if (debugConsoleInitialized) {
+                DebugConsole::shutdown(); // This calls TTF_Quit() internally
+            }
             SDL_Quit();
             return 1;
         }
         configFile >> config;
+        std::cout << "DEBUG: Configuration file loaded successfully" << std::endl;
         
         // Initialize all named pipes from controller_pipes and phy_pipes sections
         std::cout << "[Main] Initializing named pipes..." << std::endl;
@@ -113,7 +139,9 @@ int main(int argc, char* argv[]) {
     } catch (const std::exception& e) {
         std::cerr << "Failed to set up configuration: " << e.what() << std::endl;
         logToFile("Failed to set up configuration: " + std::string(e.what()));
-        TTF_Quit();
+        if (debugConsoleInitialized) {
+            DebugConsole::shutdown(); // This calls TTF_Quit() internally
+        }
         SDL_Quit();
         return 1;
     }
@@ -122,6 +150,8 @@ int main(int argc, char* argv[]) {
     std::cout << "[BOOT] Bootup succeeded" << std::endl;
     logToFile("[BOOT] Bootup succeeded");
 
+    // BREAKPOINT #5: Set a breakpoint before window creation
+    std::cout << "DEBUG: About to create window" << std::endl;
     // Load UI window
     SDL_Window* window = SDL_CreateWindow("Fidget Reactor UI",
                                           SDL_WINDOWPOS_CENTERED,
@@ -132,10 +162,13 @@ int main(int argc, char* argv[]) {
     if (!window) {
         std::cerr << "SDL Create Window Error: " << SDL_GetError() << std::endl;
         logToFile("SDL Create Window Error: " + std::string(SDL_GetError()));
-        TTF_Quit();
+        if (debugConsoleInitialized) {
+            DebugConsole::shutdown(); // This calls TTF_Quit() internally
+        }
         SDL_Quit();
         return 1;
     }
+    std::cout << "DEBUG: Window created successfully" << std::endl;
     std::cout << "Window created successfully" << std::endl;
 
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
@@ -143,7 +176,9 @@ int main(int argc, char* argv[]) {
         std::cerr << "SDL Create Renderer Error: " << SDL_GetError() << std::endl;
         logToFile("SDL Create Renderer Error: " + std::string(SDL_GetError()));
         SDL_DestroyWindow(window);
-        TTF_Quit();
+        if (debugConsoleInitialized) {
+            DebugConsole::shutdown(); // This calls TTF_Quit() internally
+        }
         SDL_Quit();
         return 1;
     }
@@ -151,6 +186,8 @@ int main(int argc, char* argv[]) {
 
     PowerButton masterButton(350, 50, 40, 40); // MASTER in main panel
 
+    // BREAKPOINT #6: Set a breakpoint before entering the main loop
+    std::cout << "DEBUG: About to enter main loop" << std::endl;
     bool running = true;
     SDL_Event event;
     
@@ -170,8 +207,11 @@ int main(int argc, char* argv[]) {
                 int mouseX, mouseY;
                 SDL_GetMouseState(&mouseX, &mouseY);
                 
-                // Pass the mouse wheel event to the debug console
-                DebugConsole::handleMouseWheel(mouseX, mouseY, event.wheel.y);
+                // Only handle mouse wheel if debugConsole is initialized
+                if (debugConsoleInitialized) {
+                    // Pass the mouse wheel event to the debug console
+                    DebugConsole::handleMouseWheel(mouseX, mouseY, event.wheel.y);
+                }
             }
         }
 
@@ -200,8 +240,11 @@ int main(int argc, char* argv[]) {
 
         masterButton.render(renderer);
 
-        DebugConsole::render(renderer, 0, 450);
-        DebugConsole::renderMM(renderer, 600, 450);
+        // Only render debug console if it's initialized
+        if (debugConsoleInitialized) {
+            DebugConsole::render(renderer, 0, 450);
+            DebugConsole::renderMM(renderer, 600, 450);
+        }
 
         SDL_RenderPresent(renderer);
         SDL_Delay(16); // ~60 FPS

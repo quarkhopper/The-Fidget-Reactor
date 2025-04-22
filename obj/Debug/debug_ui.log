@@ -1,0 +1,35 @@
+﻿  debug_console.cpp
+C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\ui\debug_console.cpp(169,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  main_window.cpp
+  power_button.cpp
+  pin_sim.cpp
+  config_helper.cpp
+  Generating Code...
+  debug_ui.vcxproj -> C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bin\Debug\debug_ui.exe
+          1 file(s) copied.
+          1 file(s) copied.
+          1 file(s) copied.
+          1 file(s) copied.
+          1 file(s) copied.
+          1 file(s) copied.
+          1 file(s) copied.
+          1 file(s) copied.
+          1 file(s) copied.
+          1 file(s) copied.
+          1 file(s) copied.
+  The system cannot find the file specified.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073: The command "
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073:         copy /Y "C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\config\simulation_config.json" "C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bin\Debug\"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073:         copy /Y "C:\vcpkg\installed\x64-windows\bin\SDL2.dll" "C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bin\Debug\"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073:         copy /Y "C:\vcpkg\installed\x64-windows\bin\SDL2_ttf.dll" "C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bin\Debug\"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073:         copy /Y "C:\vcpkg\installed\x64-windows\bin\libprotobuf.dll" "C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bin\Debug\"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073:         copy /Y "C:\vcpkg\installed\x64-windows\bin\zlib1.dll" "C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bin\Debug\"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073:         copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlicommon.dll" "C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bin\Debug\"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073:         copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlidec.dll" "C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bin\Debug\"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073:         copy /Y "C:\vcpkg\installed\x64-windows\bin\bz2.dll" "C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bin\Debug\"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073:         copy /Y "C:\vcpkg\installed\x64-windows\bin\freetype.dll" "C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bin\Debug\"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073:         copy /Y "C:\vcpkg\installed\x64-windows\bin\libpng16.dll" "C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bin\Debug\"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073:         copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlienc.dll" "C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bin\Debug\"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073:         copy /Y "C:\vcpkg\installed\x64-windows\bin\harfbuzz.dll" "C:\Users\quark\OneDrive\Documents\GitHub\The-Fidget-Reactor\bin\Debug\"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073:       
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073: :VCEnd" exited with code 1.
