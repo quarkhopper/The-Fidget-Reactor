@@ -40,6 +40,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <ImportGroup Label="NuGet" Condition="Exists('$(SolutionDir)packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.props')">
+    <Import Project="$(SolutionDir)packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.props" />
+  </ImportGroup>
   <!-- Output directories -->
   <PropertyGroup>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
@@ -56,8 +59,8 @@
   <!-- Compiler settings for Debug -->
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;PROTOBUF_USE_DLLS;ABSL_CONSUME_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\vcpkg\installed\x64-windows\include;C:\vcpkg\installed\x64-windows\include\SDL2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -67,30 +70,19 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>C:\vcpkg\installed\x64-windows\debug\lib\libprotobufd.lib;C:\vcpkg\installed\x64-windows\debug\lib\manual-link\SDL2maind.lib;C:\vcpkg\installed\x64-windows\debug\lib\SDL2_ttfd.lib;C:\vcpkg\installed\x64-windows\debug\lib\SDL2d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
         if exist "$(ProjectDir)config\simulation_config.json" copy /Y "$(ProjectDir)config\simulation_config.json" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\SDL2.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\SDL2.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\SDL2_ttf.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\SDL2_ttf.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\libprotobuf.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\libprotobuf.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\zlib1.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\zlib1.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\brotlicommon.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlicommon.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\brotlidec.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlidec.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\bz2.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\bz2.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\freetype.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\freetype.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\libpng16.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\libpng16.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\brotlienc.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlienc.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\harfbuzz.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\harfbuzz.dll" "$(OutDir)"
       </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <!-- Compiler settings for Release -->
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;PROTOBUF_USE_DLLS;ABSL_CONSUME_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\vcpkg\installed\x64-windows\include;C:\vcpkg\installed\x64-windows\include\SDL2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -101,22 +93,11 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>C:\vcpkg\installed\x64-windows\lib\libprotobuf.lib;C:\vcpkg\installed\x64-windows\lib\manual-link\SDL2main.lib;C:\vcpkg\installed\x64-windows\lib\SDL2_ttf.lib;C:\vcpkg\installed\x64-windows\lib\SDL2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
         if exist "$(ProjectDir)config\simulation_config.json" copy /Y "$(ProjectDir)config\simulation_config.json" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\SDL2.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\SDL2.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\SDL2_ttf.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\SDL2_ttf.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\libprotobuf.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\libprotobuf.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\zlib1.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\zlib1.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\brotlicommon.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlicommon.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\brotlidec.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlidec.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\bz2.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\bz2.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\freetype.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\freetype.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\libpng16.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\libpng16.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\brotlienc.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\brotlienc.dll" "$(OutDir)"
-        if exist "C:\vcpkg\installed\x64-windows\bin\harfbuzz.dll" copy /Y "C:\vcpkg\installed\x64-windows\bin\harfbuzz.dll" "$(OutDir)"
       </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -139,8 +120,26 @@
   <!-- Other files -->
   <ItemGroup>
     <None Include="config\simulation_config.json" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\sdl2.nuget.redist.2.28.5\build\native\sdl2.nuget.redist.targets" Condition="Exists('packages\sdl2.nuget.redist.2.28.5\build\native\sdl2.nuget.redist.targets')" />
+    <Import Project="packages\sdl2.nuget.2.28.5\build\native\sdl2.nuget.targets" Condition="Exists('packages\sdl2.nuget.2.28.5\build\native\sdl2.nuget.targets')" />
+    <Import Project="packages\sdl2_ttf.nuget.redist.2.20.2\build\native\sdl2_ttf.nuget.redist.targets" Condition="Exists('packages\sdl2_ttf.nuget.redist.2.20.2\build\native\sdl2_ttf.nuget.redist.targets')" />
+    <Import Project="packages\sdl2_ttf.nuget.2.20.2\build\native\sdl2_ttf.nuget.targets" Condition="Exists('packages\sdl2_ttf.nuget.2.20.2\build\native\sdl2_ttf.nuget.targets')" />
+    <Import Project="packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets" Condition="Exists('packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets')" />
+    <Import Project="packages\protobuf-vc140.3.19.4\build\native\protobuf-vc140.targets" Condition="Exists('packages\protobuf-vc140.3.19.4\build\native\protobuf-vc140.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\sdl2.nuget.redist.2.28.5\build\native\sdl2.nuget.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\sdl2.nuget.redist.2.28.5\build\native\sdl2.nuget.redist.targets'))" />
+    <Error Condition="!Exists('packages\sdl2.nuget.2.28.5\build\native\sdl2.nuget.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\sdl2.nuget.2.28.5\build\native\sdl2.nuget.targets'))" />
+    <Error Condition="!Exists('packages\sdl2_ttf.nuget.redist.2.20.2\build\native\sdl2_ttf.nuget.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\sdl2_ttf.nuget.redist.2.20.2\build\native\sdl2_ttf.nuget.redist.targets'))" />
+    <Error Condition="!Exists('packages\sdl2_ttf.nuget.2.20.2\build\native\sdl2_ttf.nuget.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\sdl2_ttf.nuget.2.20.2\build\native\sdl2_ttf.nuget.targets'))" />
+    <Error Condition="!Exists('packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets'))" />
+    <Error Condition="!Exists('packages\protobuf-vc140.3.19.4\build\native\protobuf-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\protobuf-vc140.3.19.4\build\native\protobuf-vc140.targets'))" />
+  </Target>
 </Project>

@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug UI",
+            "name": "Run Existing Executable",
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/bin/Debug/debug_ui.exe",
@@ -13,8 +13,7 @@
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/bin/Debug",
             "environment": [],
-            "console": "externalTerminal",
-            "preLaunchTask": "build"
+            "console": "externalTerminal"
         }
     ]
 }
